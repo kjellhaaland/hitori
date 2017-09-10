@@ -1,0 +1,1062 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/HitoriSolverEngine.scala" line="571" />
+    <bookmark url="file://$PROJECT_DIR$/src/HitoriSolverEngine.scala" line="563" />
+    <bookmark url="file://$PROJECT_DIR$/src/HitoriSolverEngine.scala" line="34" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="70c70ca1-fd1a-468a-a2e3-a792b95ad78d" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="HitoriSolver" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="HitoriSolver.scala" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/HitoriSolver.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="748">
+              <caret line="370" column="10" lean-forward="false" selection-start-line="370" selection-start-column="10" selection-end-line="370" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+                <element signature="e#735#875#0" expanded="false" />
+                <element signature="e#1498#1649#0" expanded="false" />
+                <element signature="e#1498#2909#0" expanded="false" />
+                <element signature="e#2941#3336#0" expanded="false" />
+                <element signature="e#3340#4332#0" expanded="false" />
+                <element signature="e#4336#6543#0" expanded="false" />
+                <element signature="e#6547#6996#0" expanded="false" />
+                <element signature="e#7001#7593#0" expanded="false" />
+                <element signature="e#7597#8314#0" expanded="false" />
+                <element signature="e#8318#8389#0" expanded="false" />
+                <element signature="e#8393#9380#0" expanded="false" />
+                <element signature="e#9384#9978#0" expanded="false" />
+                <element signature="e#10373#10706#0" expanded="false" />
+                <element signature="e#11682#11996#0" expanded="false" />
+                <element signature="e#12000#12664#0" expanded="false" />
+                <element signature="e#12668#12783#0" expanded="false" />
+                <element signature="e#12787#13428#0" expanded="false" />
+                <element signature="e#13432#13555#0" expanded="false" />
+                <element signature="e#13559#13997#0" expanded="false" />
+                <element signature="e#14001#14471#0" expanded="false" />
+                <element signature="e#15090#15232#0" expanded="false" />
+                <element signature="e#15236#16050#0" expanded="false" />
+                <element signature="e#16081#16155#0" expanded="false" />
+                <element signature="e#16159#17590#0" expanded="false" />
+                <element signature="e#17595#18248#0" expanded="false" />
+                <element signature="e#18279#18671#0" expanded="false" />
+                <element signature="e#18675#19148#0" expanded="false" />
+                <element signature="e#19152#19569#0" expanded="false" />
+                <element signature="e#19573#20354#0" expanded="false" />
+                <element signature="e#20358#20640#0" expanded="false" />
+                <element signature="e#20644#21133#0" expanded="false" />
+                <element signature="e#21137#21463#0" expanded="false" />
+                <element signature="e#21467#21752#0" expanded="false" />
+                <element signature="e#21756#22506#0" expanded="false" />
+                <element signature="e#22196#22345#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hitori_board_5.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hitori_board_5.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hitori_board_2.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hitori_board_2.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>item</find>
+      <find>violating rule</find>
+      <find>board</find>
+      <find>flood</find>
+      <find>isSolved</find>
+      <find>Phase 3</find>
+      <find>Phase 2</find>
+      <find>Is connecte</find>
+      <find>phase</find>
+      <find>Is Connecte</find>
+      <find>printBoard</find>
+      <find />
+      <find>uniqueness</find>
+      <find>Cant fin</find>
+      <find>violating</find>
+      <find>is connected</find>
+      <find>is connectd</find>
+      <find>path</find>
+      <find>is</find>
+      <find>phase 3</find>
+      <find>isConsiste</find>
+      <find>isConsistentOld</find>
+      <find>rule3</find>
+      <find>consisten</find>
+      <find>1</find>
+      <find>rule2</find>
+      <find>is consisted</find>
+      <find>uniquenes</find>
+      <find>phase 2</find>
+      <find>p</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/hitori" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/hitori_board_1.txt" />
+        <option value="$PROJECT_DIR$/src/hitori_board_3.txt" />
+        <option value="$PROJECT_DIR$/src/HitoriSolverEngine.scala" />
+        <option value="$PROJECT_DIR$/src/Hitori.scala" />
+        <option value="$PROJECT_DIR$/src/hitori_board_4.txt" />
+        <option value="$PROJECT_DIR$/src/hitori_board_5.txt" />
+        <option value="$PROJECT_DIR$/src/hitori_board_2.txt" />
+        <option value="$PROJECT_DIR$/src/HitoriSolver.scala" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="width" value="1734" />
+    <option name="height" value="1407" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HitoriSolver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HitoriSolver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HitoriSolver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="HitoriSolver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.HitoriSolver">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="CompoundRunConfigurationType" factoryName="Compound Run Configuration">
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="HitoriSolver" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <setting name="useSbt" value="false" />
+      <setting name="useUiWithSbt" value="false" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="HitoriSolver" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="HitoriSolver" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="hitori_board_2.txt hitori_board_1_solved.txt" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/src" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="HitoriSolver" />
+      <envs />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Application.HitoriSolver" />
+    </list>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="70c70ca1-fd1a-468a-a2e3-a792b95ad78d" name="Default" comment="" />
+      <created>1504697894924</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1504697894924</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="0" width="1734" height="1407" extended-state="0" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.60675037" sideWeight="0.51194745" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6938776" sideWeight="0.48805258" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1493429" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.49044207" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="scala-line">
+          <url>file://$PROJECT_DIR$/src/HitoriSolverEngine.scala</url>
+          <line>357</line>
+          <properties />
+          <option name="timeStamp" value="146" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <condition expression="item.value == &quot;3&quot;" language="Scala" />
+          <url>file://$PROJECT_DIR$/src/HitoriSolver.scala</url>
+          <line>498</line>
+          <properties />
+          <option name="timeStamp" value="315" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="scala-line">
+          <condition expression="i.value == &quot;3&quot;" language="Scala" />
+          <url>file://$PROJECT_DIR$/src/HitoriSolver.scala</url>
+          <line>370</line>
+          <properties />
+          <option name="timeStamp" value="316" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="317" />
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((String)((HItem)item).value).hash" custom="HitoriSolver.HItem,java.lang.String" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/HitoriSolver.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#735#875#0" expanded="false" />
+            <element signature="e#1498#1649#0" expanded="false" />
+            <element signature="e#1498#2909#0" expanded="false" />
+            <element signature="e#2941#3336#0" expanded="false" />
+            <element signature="e#3340#4332#0" expanded="false" />
+            <element signature="e#4336#6543#0" expanded="false" />
+            <element signature="e#6547#6996#0" expanded="false" />
+            <element signature="e#7001#7593#0" expanded="false" />
+            <element signature="e#7597#8314#0" expanded="false" />
+            <element signature="e#8318#8389#0" expanded="false" />
+            <element signature="e#8393#9380#0" expanded="false" />
+            <element signature="e#9384#9978#0" expanded="false" />
+            <element signature="e#10373#10706#0" expanded="false" />
+            <element signature="e#11682#11996#0" expanded="false" />
+            <element signature="e#12000#12664#0" expanded="false" />
+            <element signature="e#12668#12783#0" expanded="false" />
+            <element signature="e#12787#13428#0" expanded="false" />
+            <element signature="e#13432#13555#0" expanded="false" />
+            <element signature="e#13559#13997#0" expanded="false" />
+            <element signature="e#14001#14471#0" expanded="false" />
+            <element signature="e#15090#15232#0" expanded="false" />
+            <element signature="e#15236#16050#0" expanded="false" />
+            <element signature="e#16081#16155#0" expanded="false" />
+            <element signature="e#16159#17590#0" expanded="false" />
+            <element signature="e#17595#18248#0" expanded="false" />
+            <element signature="e#18279#18671#0" expanded="false" />
+            <element signature="e#18675#19148#0" expanded="false" />
+            <element signature="e#19152#19569#0" expanded="false" />
+            <element signature="e#19573#20354#0" expanded="false" />
+            <element signature="e#20358#20640#0" expanded="false" />
+            <element signature="e#20644#21133#0" expanded="false" />
+            <element signature="e#21137#21463#0" expanded="false" />
+            <element signature="e#21467#21752#0" expanded="false" />
+            <element signature="e#21756#22506#0" expanded="false" />
+            <element signature="e#22196#22345#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hitori_board_5.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="15" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hitori_board_2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="43" lean-forward="true" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HitoriSolver.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#735#875#0" expanded="false" />
+            <element signature="e#1498#1649#0" expanded="false" />
+            <element signature="e#1498#2909#0" expanded="false" />
+            <element signature="e#2941#3336#0" expanded="false" />
+            <element signature="e#3340#4332#0" expanded="false" />
+            <element signature="e#4336#6543#0" expanded="false" />
+            <element signature="e#6547#6996#0" expanded="false" />
+            <element signature="e#7001#7593#0" expanded="false" />
+            <element signature="e#7597#8314#0" expanded="false" />
+            <element signature="e#8318#8389#0" expanded="false" />
+            <element signature="e#8393#9380#0" expanded="false" />
+            <element signature="e#9384#9978#0" expanded="false" />
+            <element signature="e#10373#10706#0" expanded="false" />
+            <element signature="e#11682#11996#0" expanded="false" />
+            <element signature="e#12000#12664#0" expanded="false" />
+            <element signature="e#12668#12783#0" expanded="false" />
+            <element signature="e#12787#13428#0" expanded="false" />
+            <element signature="e#13432#13555#0" expanded="false" />
+            <element signature="e#13559#13997#0" expanded="false" />
+            <element signature="e#14001#14471#0" expanded="false" />
+            <element signature="e#15090#15232#0" expanded="false" />
+            <element signature="e#15236#16050#0" expanded="false" />
+            <element signature="e#16081#16155#0" expanded="false" />
+            <element signature="e#16159#17590#0" expanded="false" />
+            <element signature="e#17595#18248#0" expanded="false" />
+            <element signature="e#18279#18671#0" expanded="false" />
+            <element signature="e#18675#19148#0" expanded="false" />
+            <element signature="e#19152#19569#0" expanded="false" />
+            <element signature="e#19573#20354#0" expanded="false" />
+            <element signature="e#20358#20640#0" expanded="false" />
+            <element signature="e#20644#21133#0" expanded="false" />
+            <element signature="e#21137#21463#0" expanded="false" />
+            <element signature="e#21467#21752#0" expanded="false" />
+            <element signature="e#21756#22506#0" expanded="false" />
+            <element signature="e#22196#22345#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HitoriSolverEngine.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1938">
+          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#700#840#0" expanded="false" />
+            <element signature="e#1462#1613#0" expanded="false" />
+            <element signature="e#1462#2487#0" expanded="false" />
+            <element signature="e#2308#2443#0" expanded="false" />
+            <element signature="e#5754#6236#0" expanded="false" />
+            <element signature="e#6240#6568#0" expanded="false" />
+            <element signature="e#6572#6901#0" expanded="false" />
+            <element signature="e#6905#7195#0" expanded="false" />
+            <element signature="e#7199#7489#0" expanded="false" />
+            <element signature="e#7493#8005#0" expanded="false" />
+            <element signature="e#8009#8303#0" expanded="false" />
+            <element signature="e#8335#8552#0" expanded="false" />
+            <element signature="e#8556#9042#0" expanded="false" />
+            <element signature="e#9046#9619#0" expanded="false" />
+            <element signature="e#10267#10659#0" expanded="false" />
+            <element signature="e#10663#11136#0" expanded="false" />
+            <element signature="e#11140#11557#0" expanded="false" />
+            <element signature="e#11561#12342#0" expanded="false" />
+            <element signature="e#12346#12628#0" expanded="false" />
+            <element signature="e#12632#13121#0" expanded="false" />
+            <element signature="e#13125#13451#0" expanded="false" />
+            <element signature="e#13455#14492#0" expanded="false" />
+            <element signature="e#14496#15090#0" expanded="false" />
+            <element signature="e#15094#15480#0" expanded="false" />
+            <element signature="e#15484#15878#0" expanded="false" />
+            <element signature="e#15883#16633#0" expanded="false" />
+            <element signature="e#16323#16472#0" expanded="false" />
+            <element signature="e#16638#17523#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hitori_board_2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HitoriSolver.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#735#875#0" expanded="false" />
+            <element signature="e#1498#1649#0" expanded="false" />
+            <element signature="e#1498#2909#0" expanded="false" />
+            <element signature="e#2941#3336#0" expanded="false" />
+            <element signature="e#3340#4332#0" expanded="false" />
+            <element signature="e#4336#6543#0" expanded="false" />
+            <element signature="e#6547#6996#0" expanded="false" />
+            <element signature="e#7001#7593#0" expanded="false" />
+            <element signature="e#7597#8314#0" expanded="false" />
+            <element signature="e#8318#8389#0" expanded="false" />
+            <element signature="e#8393#9380#0" expanded="false" />
+            <element signature="e#9384#9978#0" expanded="false" />
+            <element signature="e#10373#10706#0" expanded="false" />
+            <element signature="e#11682#11996#0" expanded="false" />
+            <element signature="e#12000#12664#0" expanded="false" />
+            <element signature="e#12668#12783#0" expanded="false" />
+            <element signature="e#12787#13428#0" expanded="false" />
+            <element signature="e#13432#13555#0" expanded="false" />
+            <element signature="e#13559#13997#0" expanded="false" />
+            <element signature="e#14001#14471#0" expanded="false" />
+            <element signature="e#15090#15232#0" expanded="false" />
+            <element signature="e#15236#16050#0" expanded="false" />
+            <element signature="e#16081#16155#0" expanded="false" />
+            <element signature="e#16159#17590#0" expanded="false" />
+            <element signature="e#17595#18248#0" expanded="false" />
+            <element signature="e#18279#18671#0" expanded="false" />
+            <element signature="e#18675#19148#0" expanded="false" />
+            <element signature="e#19152#19569#0" expanded="false" />
+            <element signature="e#19573#20354#0" expanded="false" />
+            <element signature="e#20358#20640#0" expanded="false" />
+            <element signature="e#20644#21133#0" expanded="false" />
+            <element signature="e#21137#21463#0" expanded="false" />
+            <element signature="e#21467#21752#0" expanded="false" />
+            <element signature="e#21756#22506#0" expanded="false" />
+            <element signature="e#22196#22345#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HitoriSolverEngine.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#700#840#0" expanded="false" />
+            <element signature="e#1462#1613#0" expanded="false" />
+            <element signature="e#1462#2487#0" expanded="false" />
+            <element signature="e#2308#2443#0" expanded="false" />
+            <element signature="e#5754#6236#0" expanded="false" />
+            <element signature="e#6240#6568#0" expanded="false" />
+            <element signature="e#6572#6901#0" expanded="false" />
+            <element signature="e#6905#7195#0" expanded="false" />
+            <element signature="e#7199#7489#0" expanded="false" />
+            <element signature="e#7493#8005#0" expanded="false" />
+            <element signature="e#8009#8303#0" expanded="false" />
+            <element signature="e#8335#8552#0" expanded="false" />
+            <element signature="e#8556#9042#0" expanded="false" />
+            <element signature="e#9046#9619#0" expanded="false" />
+            <element signature="e#10267#10659#0" expanded="false" />
+            <element signature="e#10663#11136#0" expanded="false" />
+            <element signature="e#11140#11557#0" expanded="false" />
+            <element signature="e#11561#12342#0" expanded="false" />
+            <element signature="e#12346#12628#0" expanded="false" />
+            <element signature="e#12632#13121#0" expanded="false" />
+            <element signature="e#13125#13451#0" expanded="false" />
+            <element signature="e#13455#14492#0" expanded="false" />
+            <element signature="e#14496#15090#0" expanded="false" />
+            <element signature="e#15094#15480#0" expanded="false" />
+            <element signature="e#15484#15878#0" expanded="false" />
+            <element signature="e#15883#16633#0" expanded="false" />
+            <element signature="e#16323#16472#0" expanded="false" />
+            <element signature="e#16638#17523#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HitoriSolverEngine.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#700#840#0" expanded="false" />
+            <element signature="e#1462#1613#0" expanded="false" />
+            <element signature="e#1462#2487#0" expanded="false" />
+            <element signature="e#2308#2443#0" expanded="false" />
+            <element signature="e#5754#6236#0" expanded="false" />
+            <element signature="e#6240#6568#0" expanded="false" />
+            <element signature="e#6572#6901#0" expanded="false" />
+            <element signature="e#6905#7195#0" expanded="false" />
+            <element signature="e#7199#7489#0" expanded="false" />
+            <element signature="e#7493#8005#0" expanded="false" />
+            <element signature="e#8009#8303#0" expanded="false" />
+            <element signature="e#8335#8552#0" expanded="false" />
+            <element signature="e#8556#9042#0" expanded="false" />
+            <element signature="e#9046#9619#0" expanded="false" />
+            <element signature="e#10267#10659#0" expanded="false" />
+            <element signature="e#10663#11136#0" expanded="false" />
+            <element signature="e#11140#11557#0" expanded="false" />
+            <element signature="e#11561#12342#0" expanded="false" />
+            <element signature="e#12346#12628#0" expanded="false" />
+            <element signature="e#12632#13121#0" expanded="false" />
+            <element signature="e#13125#13451#0" expanded="false" />
+            <element signature="e#13455#14492#0" expanded="false" />
+            <element signature="e#14496#15090#0" expanded="false" />
+            <element signature="e#15094#15480#0" expanded="false" />
+            <element signature="e#15484#15878#0" expanded="false" />
+            <element signature="e#15883#16633#0" expanded="false" />
+            <element signature="e#16323#16472#0" expanded="false" />
+            <element signature="e#16638#17523#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HitoriSolverEngine.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#700#840#0" expanded="false" />
+            <element signature="e#1462#1613#0" expanded="false" />
+            <element signature="e#1462#2487#0" expanded="false" />
+            <element signature="e#2308#2443#0" expanded="false" />
+            <element signature="e#5754#6236#0" expanded="false" />
+            <element signature="e#6240#6568#0" expanded="false" />
+            <element signature="e#6572#6901#0" expanded="false" />
+            <element signature="e#6905#7195#0" expanded="false" />
+            <element signature="e#7199#7489#0" expanded="false" />
+            <element signature="e#7493#8005#0" expanded="false" />
+            <element signature="e#8009#8303#0" expanded="false" />
+            <element signature="e#8335#8552#0" expanded="false" />
+            <element signature="e#8556#9042#0" expanded="false" />
+            <element signature="e#9046#9619#0" expanded="false" />
+            <element signature="e#10267#10659#0" expanded="false" />
+            <element signature="e#10663#11136#0" expanded="false" />
+            <element signature="e#11140#11557#0" expanded="false" />
+            <element signature="e#11561#12342#0" expanded="false" />
+            <element signature="e#12346#12628#0" expanded="false" />
+            <element signature="e#12632#13121#0" expanded="false" />
+            <element signature="e#13125#13451#0" expanded="false" />
+            <element signature="e#13455#14492#0" expanded="false" />
+            <element signature="e#14496#15090#0" expanded="false" />
+            <element signature="e#15094#15480#0" expanded="false" />
+            <element signature="e#15484#15878#0" expanded="false" />
+            <element signature="e#15883#16633#0" expanded="false" />
+            <element signature="e#16323#16472#0" expanded="false" />
+            <element signature="e#16638#17523#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HitoriSolverEngine.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#700#840#0" expanded="false" />
+            <element signature="e#1462#1613#0" expanded="false" />
+            <element signature="e#1462#2487#0" expanded="false" />
+            <element signature="e#2308#2443#0" expanded="false" />
+            <element signature="e#5754#6236#0" expanded="false" />
+            <element signature="e#6240#6568#0" expanded="false" />
+            <element signature="e#6572#6901#0" expanded="false" />
+            <element signature="e#6905#7195#0" expanded="false" />
+            <element signature="e#7199#7489#0" expanded="false" />
+            <element signature="e#7493#8005#0" expanded="false" />
+            <element signature="e#8009#8303#0" expanded="false" />
+            <element signature="e#8335#8552#0" expanded="false" />
+            <element signature="e#8556#9042#0" expanded="false" />
+            <element signature="e#9046#9619#0" expanded="false" />
+            <element signature="e#10267#10659#0" expanded="false" />
+            <element signature="e#10663#11136#0" expanded="false" />
+            <element signature="e#11140#11557#0" expanded="false" />
+            <element signature="e#11561#12342#0" expanded="false" />
+            <element signature="e#12346#12628#0" expanded="false" />
+            <element signature="e#12632#13121#0" expanded="false" />
+            <element signature="e#13125#13451#0" expanded="false" />
+            <element signature="e#13455#14492#0" expanded="false" />
+            <element signature="e#14496#15090#0" expanded="false" />
+            <element signature="e#15094#15480#0" expanded="false" />
+            <element signature="e#15484#15878#0" expanded="false" />
+            <element signature="e#15883#16633#0" expanded="false" />
+            <element signature="e#16323#16472#0" expanded="false" />
+            <element signature="e#16638#17523#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hitori_board_1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Hitori.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hitori_board_4.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="42" lean-forward="true" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.1-sources.jar!/scala/collection/TraversableLike.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="247" column="6" lean-forward="false" selection-start-line="247" selection-start-column="6" selection-end-line="247" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.1-sources.jar!/scala/collection/immutable/List.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="376" column="4" lean-forward="false" selection-start-line="376" selection-start-column="4" selection-end-line="376" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.1-sources.jar!/scala/collection/mutable/HashSet.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="64" column="15" lean-forward="false" selection-start-line="64" selection-start-column="15" selection-end-line="64" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hitori_board_3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.12.1-sources.jar!/scala/collection/LinearSeqOptimized.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="49" column="4" lean-forward="false" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/java/io/FileOutputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="301" column="24" lean-forward="false" selection-start-line="301" selection-start-column="24" selection-end-line="301" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HitoriSolverEngine.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="114" column="0" lean-forward="false" selection-start-line="114" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#700#840#0" expanded="false" />
+            <element signature="e#1462#1613#0" expanded="false" />
+            <element signature="e#1462#2487#0" expanded="false" />
+            <element signature="e#2308#2443#0" expanded="false" />
+            <element signature="e#5754#6236#0" expanded="false" />
+            <element signature="e#6240#6568#0" expanded="false" />
+            <element signature="e#6572#6901#0" expanded="false" />
+            <element signature="e#6905#7195#0" expanded="false" />
+            <element signature="e#7199#7489#0" expanded="false" />
+            <element signature="e#7493#8005#0" expanded="false" />
+            <element signature="e#8009#8303#0" expanded="false" />
+            <element signature="e#8335#8552#0" expanded="false" />
+            <element signature="e#8556#9042#0" expanded="false" />
+            <element signature="e#9046#9619#0" expanded="false" />
+            <element signature="e#10267#10659#0" expanded="false" />
+            <element signature="e#10663#11136#0" expanded="false" />
+            <element signature="e#11140#11557#0" expanded="false" />
+            <element signature="e#11561#12342#0" expanded="false" />
+            <element signature="e#12346#12628#0" expanded="false" />
+            <element signature="e#12632#13121#0" expanded="false" />
+            <element signature="e#13125#13451#0" expanded="false" />
+            <element signature="e#13455#14492#0" expanded="false" />
+            <element signature="e#14496#15090#0" expanded="false" />
+            <element signature="e#15094#15480#0" expanded="false" />
+            <element signature="e#15484#15878#0" expanded="false" />
+            <element signature="e#15883#16633#0" expanded="false" />
+            <element signature="e#16323#16472#0" expanded="false" />
+            <element signature="e#16638#17523#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hitori_board_5.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="7" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hitori_board_2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HitoriSolver.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="370" column="10" lean-forward="false" selection-start-line="370" selection-start-column="10" selection-end-line="370" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <element signature="e#735#875#0" expanded="false" />
+            <element signature="e#1498#1649#0" expanded="false" />
+            <element signature="e#1498#2909#0" expanded="false" />
+            <element signature="e#2941#3336#0" expanded="false" />
+            <element signature="e#3340#4332#0" expanded="false" />
+            <element signature="e#4336#6543#0" expanded="false" />
+            <element signature="e#6547#6996#0" expanded="false" />
+            <element signature="e#7001#7593#0" expanded="false" />
+            <element signature="e#7597#8314#0" expanded="false" />
+            <element signature="e#8318#8389#0" expanded="false" />
+            <element signature="e#8393#9380#0" expanded="false" />
+            <element signature="e#9384#9978#0" expanded="false" />
+            <element signature="e#10373#10706#0" expanded="false" />
+            <element signature="e#11682#11996#0" expanded="false" />
+            <element signature="e#12000#12664#0" expanded="false" />
+            <element signature="e#12668#12783#0" expanded="false" />
+            <element signature="e#12787#13428#0" expanded="false" />
+            <element signature="e#13432#13555#0" expanded="false" />
+            <element signature="e#13559#13997#0" expanded="false" />
+            <element signature="e#14001#14471#0" expanded="false" />
+            <element signature="e#15090#15232#0" expanded="false" />
+            <element signature="e#15236#16050#0" expanded="false" />
+            <element signature="e#16081#16155#0" expanded="false" />
+            <element signature="e#16159#17590#0" expanded="false" />
+            <element signature="e#17595#18248#0" expanded="false" />
+            <element signature="e#18279#18671#0" expanded="false" />
+            <element signature="e#18675#19148#0" expanded="false" />
+            <element signature="e#19152#19569#0" expanded="false" />
+            <element signature="e#19573#20354#0" expanded="false" />
+            <element signature="e#20358#20640#0" expanded="false" />
+            <element signature="e#20644#21133#0" expanded="false" />
+            <element signature="e#21137#21463#0" expanded="false" />
+            <element signature="e#21467#21752#0" expanded="false" />
+            <element signature="e#21756#22506#0" expanded="false" />
+            <element signature="e#22196#22345#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
