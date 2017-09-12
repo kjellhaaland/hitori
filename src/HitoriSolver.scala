@@ -206,6 +206,67 @@ object HitoriSolver
     return f;
   }
 
+  /**
+    * This pattern finds triple corners (three similar values) and sets the parent cell as black
+    * It compares a corner cell with neighbour cells
+    */
+  def patternTripleCorner(board: HBoard, itemA: HItem, itemB: HItem): HBoard =
+  {
+    /*
+    1. Sjekk om det er et hjørne
+    2. Finn naboer
+    3. Sjekk naboers value er lik itemA value
+    4. Hvis ja, sett itemA som svart
+     */
+
+    val f = itemA match {
+    case i if isInCorner(board, i) == "TL"
+      && i.value == getCellXY(board, i.x + 1, i.y).value
+      && i.value == getCellXY(board, i.x, i.y + 1).value => setCellBlack(board,i.x,i.y)
+    case i if isInCorner(board, i) == "BL"
+      && i.value == getCellXY(board, i.x + 1, i.y).value
+      && i.value == getCellXY(board, i.x, i.y - 1).value  => setCellBlack(board,i.x,i.y)
+    case i if isInCorner(board, i) == "TR"
+      && i.value == getCellXY(board, i.x - 1, i.y).value
+      && i.value == getCellXY(board, i.x, i.y + 1).value  => setCellBlack(board,i.x,i.y)
+    case i if isInCorner(board, i) == "BR"
+      && i.value == getCellXY(board, i.x - 1, i.y).value
+      && i.value == getCellXY(board, i.x, i.y - 1).value  => setCellBlack(board,i.x,i.y)
+
+    case _ => board
+    }
+
+    return f
+  }
+
+  /**
+    * This pattern finds quad corners (four similar values) and sets the parent cell and closest diagonal cell black.
+    */
+  def patternQuadCorner(board: HBoard, itemA: HItem, itemB: HItem): HBoard =
+  {
+    val f = itemA match {
+      case i if isInCorner(board, i) == "TL"
+        && i.value == getCellXY(board, i.x + 1, i.y).value //
+        && i.value == getCellXY(board, i.x, i.y + 1).value
+        && i.value == getCellXY(board, i.x + 1, i.y + 1).value => setCellBlack(board, i.x, i.y); setCellBlack(board, i.x + 1, i.y + 1)
+      case i if isInCorner(board, i) == "BL"
+        && i.value == getCellXY(board, i.x + 1, i.y).value
+        && i.value == getCellXY(board, i.x, i.y - 1).value
+        && i.value == getCellXY(board, i.x + 1, i.y - 1).value => setCellBlack(board, i.x, i.y); setCellBlack(board, i.x + 1, i.y - 1)
+      case i if isInCorner(board, i) == "TR"
+        && i.value == getCellXY(board, i.x - 1, i.y).value
+        && i.value == getCellXY(board, i.x, i.y + 1).value
+        && i.value == getCellXY(board, i.x - 1, i.y + 1).value => setCellBlack(board, i.x, i.y); setCellBlack(board, i.x - 1, i.y + 1)
+      case i if isInCorner(board, i) == "BR"
+        && i.value == getCellXY(board, i.x - 1, i.y).value
+        && i.value == getCellXY(board, i.x, i.y - 1).value
+        && i.value == getCellXY(board, i.x - 1, i.y - 1).value => setCellBlack(board, i.x, i.y); setCellBlack(board, i.x - 1, i.y - 1)
+      case _ => board
+    }
+
+    return f
+  }
+
   def patternSandwich(board: HBoard, itemA: HItem, itemB: HItem): HBoard =
   {
     itemA match
@@ -395,6 +456,54 @@ object HitoriSolver
   def phase3(board: HBoard): HBoard =
   {
 
+    var b = board
+    var field = board
+    var dup = unsolvedDuplicates(b)
+
+    var flag = true
+    var break = false
+
+    while(flag) {
+
+      flag = false
+      break = false
+
+      for (it <- dup) {
+        if(!break) {
+          field = setCellBlack(field, it.x, it.y)
+          field = standardCycle(field, it)
+          field = phase2(field)
+          field = phase3(field) //Rekursjon
+
+          val noDuplicates = rule1(field)
+
+          if(isSolved(field))
+            return field
+
+          if (!noDuplicates)
+          {
+            println("Solved item: " + it.x + " : " + it.y + "  =  " + it.value)
+            field = b
+            printBoard(field)
+            field = setCellWhite(field, it.x, it.y)
+            field = standardCycle(field, it)
+            field = phase2(field)
+            printBoard(field)
+            b = field
+            flag = true
+            break = true
+          }
+          else
+          {
+            field = b
+            println("Tried something but failed. Outcome is unknown!")
+            printBoard(b)
+            println("-----------------------------------------------")
+          }
+        }
+      }
+    }
+
     //TODO: Create some sort of brute force ish algoritm
     return board
   }
@@ -563,13 +672,13 @@ object HitoriSolver
   def isInCorner(board: HBoard, itemA: HItem): String =
   {
     val bs = math.sqrt(board.items.length) - 1;
-
+  //0 1 2 3 4
     itemA match
     {
-      case i if i.x - 1 == -1 && i.y - 1 == -1 => "TL" // TopLeft
-      case i if i.x == bs + 1 && i.y - 1 == -1 => "TR" // TopRight
-      case i if i.x - 1 == -1 && i.y == bs + 1 => "BL" // BottomLeft
-      case i if i.x == bs && i.y == bs => "UL" // BottomRight
+      case i if i.x == 0 && i.y == 0 => "TL" // TopLeft
+      case i if i.x == bs && i.y == 0 => "TR" // TopRight
+      case i if i.x == 0 && i.y == bs => "BL" // BottomLeft
+      case i if i.x == bs && i.y == bs => "BR" // BottomRight
       case _ => "F";
     }
   }
@@ -592,6 +701,20 @@ object HitoriSolver
     }
 
     return i;
+  }
+
+  def isOnEdge(board: HBoard, itemA: HItem): String =
+  {
+    val bs = math.sqrt(board.items.length) - 1
+
+    itemA match
+    {
+      case i if i.x == 0 => "LE"
+      case i if i.x == bs => "RE"
+      case i if i.y == 0 => "TE"
+      case i if i.y == bs => "BE"
+      case _ => "F"
+    }
   }
 
   def getCellXY(board: HBoard, xPos: Int, yPos: Int): HItem =
@@ -659,7 +782,7 @@ object HitoriSolver
   def loadGameFromFile(inputPath: String): HBoard =
   {
     val puzzleFile = new File(inputPath)
-    val lines = scala.io.Source.fromFile(puzzleFile).mkString.split("\r\n");
+    val lines = scala.io.Source.fromFile(puzzleFile).mkString.split("\n");
 
     var board: HBoard = new HBoard(List())
 
