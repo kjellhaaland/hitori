@@ -165,10 +165,20 @@ object HitoriSolver
     //val conflicts: List[HItem] = board.items.zipWithIndex.filter(_._1.value == item.value).filter(_._1.state != "B").map(_._1).filter(i => i.x == item.x || i.y == item.y)
 
     // Pattern 1 - Sandwich
-    conflicts.foreach(i => b = patternSandwich(b, item, i))
+    //conflicts.foreach(i => b = patternSandwich(b, item, i))
 
     // Pattern 2 - Double corner
-    conflicts.foreach(i => b = patternDoubleCorner(b, item, i))
+    //conflicts.foreach(i => b = patternDoubleCorner(b, item, i))
+
+    //Pattern 2 - Triple corner
+    //conflicts.foreach(i => b = patternTripleCorner(b, item, i))
+
+    //Pattern 2 - Flipped triple corner
+    conflicts.foreach(i=> b = patternFlippedTripleCorner(b, item))
+
+    //Pattern 3 - Quad corner
+    //conflicts.foreach(i => b = patternTripleCorner(b, item, i))
+
 
     // Pattern 3 - Triple in a row/col
     b = patternTriple(b, item)
@@ -243,6 +253,29 @@ object HitoriSolver
       case i if isInCorner(board, i) == "BR"
         && i.value == getCellXY(board, i.x - 1, i.y).value
         && i.value == getCellXY(board, i.x, i.y - 1).value => setCellBlack(board, i.x, i.y)
+
+      case _ => board
+    }
+
+    return f
+  }
+
+  def patternFlippedTripleCorner(board: HBoard, itemA: HItem): HBoard =
+  {
+
+    val f = itemA match {
+      case i if isInCorner(board, i) == "TL"
+        && getCellXY(board, i.x + 1, i.y).value == getCellXY(board, i.x + 1, i.y + 1).value
+        && getCellXY(board, i.x , i.y + 1).value == getCellXY(board, i.x + 1 , i.y + 1).value => setCellBlack(board, i.x + 1, i.y + 1)
+      case i if isInCorner(board, i) == "BL"
+        && getCellXY(board, i.x + 1, i.y).value == getCellXY(board, i.x + 1, i.y - 1).value
+        && getCellXY(board, i.x , i.y - 1).value == getCellXY(board, i.x +1 , i.y - 1).value => setCellBlack(board, i.x + 1, i.y - 1)
+      case i if isInCorner(board, i) == "TR"
+        && getCellXY(board, i.x - 1, i.y).value == getCellXY(board, i.x - 1, i.y + 1).value
+        && getCellXY(board, i.x , i.y + 1).value == getCellXY(board, i.x - 1 , i.y + 1).value => setCellBlack(board, i.x - 1, i.y + 1)
+      case i if isInCorner(board, i) == "BR"
+        && getCellXY(board, i.x - 1, i.y).value == getCellXY(board, i.x - 1, i.y - 1).value
+        && getCellXY(board, i.x , i.y - 1).value == getCellXY(board, i.x - 1 , i.y - 1).value => setCellBlack(board, i.x - 1, i.y - 1)
 
       case _ => board
     }
