@@ -4,9 +4,7 @@ import javax.swing.plaf.metal.MetalBorders.TableHeaderBorder
 import scala.collection.mutable.HashSet
 import scala.collection.mutable.Queue
 
-/**
-  * Created by kjell on 06.09.2017.
-  */
+
 object HitoriSolver
 {
 
@@ -101,14 +99,23 @@ object HitoriSolver
     var flag2 = rule3(b)
     println("Is connected after 2: " + flag2)
     flag2 = rule1(b)
-    println("Is consistent after 32: " + flag2)
+    println("Is consistent after 2: " + flag2)
 
-    if (isSolved(b)) return b
+
+    println("Entering phase 3...")
+    unsolvedItems = b.items.filter(m => m.state == "U");
+    println("Number of unsolved items: " + unsolvedItems.length)
 
     //TODO: Phase 3
+    b = phase3(b)
 
+
+    flag2 = rule3(b)
+    println("Is connected after 3: " + flag2)
+    flag2 = rule1(b)
+    println("Is consistent after 3: " + flag2)
     unsolvedItems = b.items.filter(m => m.state == "U");
-    println("Cant find more solutions!")
+
     println("Number of unsolved items: " + unsolvedItems.length)
 
     return b
@@ -222,21 +229,22 @@ object HitoriSolver
     4. Hvis ja, sett itemA som svart
      */
 
-    val f = itemA match {
-    case i if isInCorner(board, i) == "TL"
-      && i.value == getCellXY(board, i.x + 1, i.y).value
-      && i.value == getCellXY(board, i.x, i.y + 1).value => setCellBlack(board,i.x,i.y)
-    case i if isInCorner(board, i) == "BL"
-      && i.value == getCellXY(board, i.x + 1, i.y).value
-      && i.value == getCellXY(board, i.x, i.y - 1).value  => setCellBlack(board,i.x,i.y)
-    case i if isInCorner(board, i) == "TR"
-      && i.value == getCellXY(board, i.x - 1, i.y).value
-      && i.value == getCellXY(board, i.x, i.y + 1).value  => setCellBlack(board,i.x,i.y)
-    case i if isInCorner(board, i) == "BR"
-      && i.value == getCellXY(board, i.x - 1, i.y).value
-      && i.value == getCellXY(board, i.x, i.y - 1).value  => setCellBlack(board,i.x,i.y)
+    val f = itemA match
+    {
+      case i if isInCorner(board, i) == "TL"
+        && i.value == getCellXY(board, i.x + 1, i.y).value
+        && i.value == getCellXY(board, i.x, i.y + 1).value => setCellBlack(board, i.x, i.y)
+      case i if isInCorner(board, i) == "BL"
+        && i.value == getCellXY(board, i.x + 1, i.y).value
+        && i.value == getCellXY(board, i.x, i.y - 1).value => setCellBlack(board, i.x, i.y)
+      case i if isInCorner(board, i) == "TR"
+        && i.value == getCellXY(board, i.x - 1, i.y).value
+        && i.value == getCellXY(board, i.x, i.y + 1).value => setCellBlack(board, i.x, i.y)
+      case i if isInCorner(board, i) == "BR"
+        && i.value == getCellXY(board, i.x - 1, i.y).value
+        && i.value == getCellXY(board, i.x, i.y - 1).value => setCellBlack(board, i.x, i.y)
 
-    case _ => board
+      case _ => board
     }
 
     return f
@@ -247,7 +255,8 @@ object HitoriSolver
     */
   def patternQuadCorner(board: HBoard, itemA: HItem, itemB: HItem): HBoard =
   {
-    val f = itemA match {
+    val f = itemA match
+    {
       case i if isInCorner(board, i) == "TL"
         && i.value == getCellXY(board, i.x + 1, i.y).value //
         && i.value == getCellXY(board, i.x, i.y + 1).value
@@ -289,7 +298,7 @@ object HitoriSolver
     * If three items in a row or column have the same value, the item in the middle must be white
     *
     * @param board A Hitori board
-    * @param item A item to check for the triple rule
+    * @param item  A item to check for the triple rule
     * @return A new hitori board with possible changes
     */
   def patternTriple(board: HBoard, item: HItem): HBoard =
@@ -360,14 +369,14 @@ object HitoriSolver
           {
             field = b
             println("Tried something but failed. Outcome is unknown!")
-            printBoard(b)
+            printBoard(field)
             println("-----------------------------------------------")
           }
         }
       }
     }
 
-    field.items.foreach(i => b = checkIfItemWillBeBlocked(b, i))
+    field.items.foreach(i => field = checkIfItemWillBeBlocked(field, i))
     field.items.foreach(i => field = checkForUniqueness(field, i))
     printBoard(field)
 
@@ -384,6 +393,16 @@ object HitoriSolver
     return b
   }
 
+  /**
+    * Checks if a item is surounded with three black items (or edges)
+    * If surrounded, the remaining unknown item must be white.
+    *
+    * If surrounded, the unknown cell is set as white
+    *
+    * @param board The board containing the item
+    * @param itemA The item to check for black items
+    * @return The board, altered if unknown cell is set to white.
+    */
   def checkIfItemWillBeBlocked(board: HBoard, itemA: HItem): HBoard =
   {
 
@@ -407,6 +426,16 @@ object HitoriSolver
 
   }
 
+  /**
+    * Checks if there exist any duplicates of the given item in its row or column
+    * If there are no errors, the item is set to white.
+    *
+    * Ignores blacked cells
+    *
+    * @param board The board to scan
+    * @param item The item to compare to
+    * @return A new board with changes only if the item was unique in its row/col
+    */
   def checkForUniqueness(board: HBoard, item: HItem): HBoard =
   {
 
@@ -429,13 +458,21 @@ object HitoriSolver
     return board
   }
 
+  /**
+    * Hitori rule 1
+    * " Numbers must not appear more than once in each row and each column."
+    *
+    * Checks if there exist any duplicates where the item's state is set to 'W'.
+    * If there are any duplicates, the board will be in a inconistent state
+    *
+    * @param board The board to check for duplicates in
+    * @return True if no duplicates, false if there are
+    */
   def rule1(board: HBoard): Boolean =
   {
     board.items.foreach(item =>
     {
-      if (item.state == "U" || item.state == "B")
-      {
-      } else
+      if (item.state == "W")
       {
         val conflictsRow = board.items.filter(i => i.value == item.value).filter(i => i.y == item.y && i.x != item.x).filter(i => i.state == "W")
         val conflictsCol = board.items.filter(i => i.value == item.value).filter(i => i.x == item.x && i.y != item.y).filter(i => i.state == "W")
@@ -450,6 +487,15 @@ object HitoriSolver
     return true
   }
 
+  /**
+    * Hitori rule 3
+    * "Unpainted cells create a single continous area, undivided by painted cells"
+    *
+    * Checkis if all items are connected.
+    *
+    * @param board The board to check for inconistensies
+    * @return True if no errors, false if errors
+    */
   def rule3(board: HBoard): Boolean =
   {
     val traversableItemsFirst = board.items.filter(i => i.state != "B")
@@ -480,12 +526,56 @@ object HitoriSolver
     return false
   }
 
-
-  /* Phase-3 functions */
-
+  /**
+    * Phase 3
+    * MARK: With big boards, phase 3 takes time!
+    *
+    * Uses recursion to try and fail with different possible solutions.
+    * Makes use of the standardCycle and phase2 for chain-reactions and checking
+    *
+    * @param board A partially solved board
+    * @return A solved board.
+    */
   def phase3(board: HBoard): HBoard =
   {
 
+    var b = board
+    var backup = b
+
+
+    val dup = b.items.filter(i => i.state == "U")
+
+    for (i <- dup)
+    {
+      b = setCellBlack(b, i.x, i.y)
+      b = standardCycle(b, i)
+      b = phase2(b)
+      b = phase3(b)
+
+      if (isSolved(b))
+        return b
+
+      val rule_1 = rule1(b)
+      val rule_3 = rule3(b)
+
+      if (!rule_1 || !rule_3)
+      {
+        b = backup
+        b = setCellWhite(b, i.x, i.y)
+        b = standardCycle(b, i)
+        b = phase2(b)
+        backup = b
+        b = phase3(b)
+      } else
+      {
+        b = backup
+      }
+
+    }
+
+    return b
+
+    /*
     var b = board
     var field = board
     var dup = unsolvedDuplicates(b)
@@ -535,7 +625,8 @@ object HitoriSolver
     }
 
     //TODO: Create some sort of brute force ish algoritm
-    return board
+    return field
+    */
   }
 
 
@@ -702,7 +793,7 @@ object HitoriSolver
   def isInCorner(board: HBoard, itemA: HItem): String =
   {
     val bs = math.sqrt(board.items.length) - 1;
-  //0 1 2 3 4
+    //0 1 2 3 4
     itemA match
     {
       case i if i.x == 0 && i.y == 0 => "TL" // TopLeft
@@ -812,7 +903,7 @@ object HitoriSolver
   def loadGameFromFile(inputPath: String): HBoard =
   {
     val puzzleFile = new File(inputPath)
-    val lines = scala.io.Source.fromFile(puzzleFile).mkString.split("\n");
+    val lines = scala.io.Source.fromFile(puzzleFile).mkString.split("\r\n");
 
     var board: HBoard = new HBoard(List())
 
