@@ -84,7 +84,7 @@ object HitoriSolver
     b = phase1(b)
 
     if (isSolved(b))
-     return b
+      return b
 
     printBoard(b)
 
@@ -162,6 +162,9 @@ object HitoriSolver
 
     // Pattern 2 - Double corner
     conflicts.foreach(i => b = patternDoubleCorner(b, item, i))
+
+    // Pattern 3 - Triple in a row/col
+    b = patternTriple(b, item)
 
     return b
   }
@@ -281,6 +284,33 @@ object HitoriSolver
   }
 
 
+  /**
+    * Pattern that determines it an item can be solved using the triple rule
+    * If three items in a row or column have the same value, the item in the middle must be white
+    *
+    * @param board A Hitori board
+    * @param item A item to check for the triple rule
+    * @return A new hitori board with possible changes
+    */
+  def patternTriple(board: HBoard, item: HItem): HBoard =
+  {
+
+    val b = board
+
+    if (item.state == "W") return board
+    val neighbours = getAllNeighbours(b, item)
+    val neighboursRow = neighbours.filter(i => i != null).filter(i => i.y == item.y).filter(i => i.value == item.value)
+    val neighboursCol = neighbours.filter(i => i != null).filter(i => i.x == item.x).filter(i => i.value == item.value)
+
+    if (neighboursRow.length == 2 || neighboursCol.length == 2)
+    {
+      return setCellWhite(b, item.x, item.y)
+    }
+
+
+    return b
+  }
+
   /* Phase-2 functions */
 
   def phase2(board: HBoard): HBoard =
@@ -310,7 +340,7 @@ object HitoriSolver
 
           val noDuplicates = rule1(field)
 
-          if(isSolved(field))
+          if (isSolved(field))
             return field
 
           if (!noDuplicates)
