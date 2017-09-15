@@ -92,6 +92,9 @@ object HitoriSolver
     // Phase 2 search
     b = phase2(b)
 
+    if (isSolved(b))
+      return b
+
     unsolvedItems = b.items.filter(m => m.state == "U");
     println("Number of unsolved items after phase 2: " + unsolvedItems.length)
     println("Entering phase 3...")
