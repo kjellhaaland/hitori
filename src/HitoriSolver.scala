@@ -84,36 +84,24 @@ object HitoriSolver
     if (isSolved(b))
       return b
 
-    printBoard(b)
-
-    println("Entering phase 2...")
+    //printBoard(b)
     unsolvedItems = b.items.filter(m => m.state == "U");
-    println("Number of unsolved items: " + unsolvedItems.length)
-
-    val flag = rule3(b)
-    println("Is connected after 1: " + flag)
+    println("Number of unsolved items after phase 1: " + unsolvedItems.length)
+    println("Entering phase 2...")
 
     // Phase 2 search
     b = phase2(b)
 
-    var flag2 = rule3(b)
-    println("Is connected after 2: " + flag2)
-    flag2 = rule1(b)
-    println("Is consistent after 2: " + flag2)
+    if (isSolved(b))
+      return b
 
-
-    println("Entering phase 3...")
     unsolvedItems = b.items.filter(m => m.state == "U");
-    println("Number of unsolved items: " + unsolvedItems.length)
+    println("Number of unsolved items after phase 2: " + unsolvedItems.length)
+    println("Entering phase 3...")
 
-    //TODO: Phase 3
+    // Phase 3 search
     b = phase3(b)
 
-
-    flag2 = rule3(b)
-    println("Is connected after 3: " + flag2)
-    flag2 = rule1(b)
-    println("Is consistent after 3: " + flag2)
     unsolvedItems = b.items.filter(m => m.state == "U");
 
     println("Number of unsolved items: " + unsolvedItems.length)
@@ -129,7 +117,6 @@ object HitoriSolver
 
     var b = board
 
-    printBoard(b)
 
     val unsolvedItemsBefore = board.items.filter(m => m.state == "U");
 
@@ -152,8 +139,7 @@ object HitoriSolver
 
     var b = board
 
-    printBoard(b)
-
+    //printBoard(b)
     val row = board.items.filter(_.y == item.y);
     val conflictsRow: List[HItem] = row.zipWithIndex.filter(_._1.value == item.value).filter(_._1.state == "U").map(_._1)
 
@@ -162,27 +148,28 @@ object HitoriSolver
 
     val conflicts = conflictsRow ::: conflictsCol
 
-    //val conflicts: List[HItem] = board.items.zipWithIndex.filter(_._1.value == item.value).filter(_._1.state != "B").map(_._1).filter(i => i.x == item.x || i.y == item.y)
 
-    // Pattern 1 - Sandwich
-    //conflicts.foreach(i => b = patternSandwich(b, item, i))
+    for (i <- conflicts)
+    {
+      // Pattern 1 - Sandwich
+      b = patternSandwich(b, item, i)
 
-    // Pattern 2 - Double corner
-    //conflicts.foreach(i => b = patternDoubleCorner(b, item, i))
+      // Pattern 2 - Double corner
+      b = patternDoubleCorner(b, item, i)
 
-    //Pattern 2 - Triple corner
-    //conflicts.foreach(i => b = patternTripleCorner(b, item, i))
+      // Pattern 3 - Triple corner
+      b = patternTripleCorner(b, item, i)
 
-    //Pattern 2 - Flipped triple corner
-    conflicts.foreach(i=> b = patternFlippedTripleCorner(b, item))
+      // Pattern 4 - Quad corner
+      b = patternQuadCorner(b, item, i)
 
-    //Pattern 3 - Quad corner
-    //conflicts.foreach(i => b = patternTripleCorner(b, item, i))
+      // Pattern 5 - Triple in a row/col
+      b = patternTriple(b, item)
 
-
-    // Pattern 3 - Triple in a row/col
-    b = patternTriple(b, item)
-
+      // Pattern 6 - Flipped Triple Corner
+      b = patternFlippedTripleCorner(b, item)
+    }
+    
     return b
   }
 
@@ -372,6 +359,8 @@ object HitoriSolver
       flag = false
       break = false
 
+      //printBoard(field)
+
       for (it <- dup)
       {
         var i = it
@@ -387,13 +376,10 @@ object HitoriSolver
 
           if (!noDuplicates)
           {
-            println("Solved item: " + i.x + " : " + i.y + "  =  " + i.value)
             field = b
-            printBoard(field)
             field = setCellWhite(field, i.x, i.y)
             field = standardCycle(field, i)
             dup = unsolvedDuplicates(field)
-            printBoard(field)
             b = field
             flag = true
             break = true
@@ -401,9 +387,6 @@ object HitoriSolver
           else
           {
             field = b
-            println("Tried something but failed. Outcome is unknown!")
-            printBoard(field)
-            println("-----------------------------------------------")
           }
         }
       }
@@ -411,7 +394,6 @@ object HitoriSolver
 
     field.items.foreach(i => field = checkIfItemWillBeBlocked(field, i))
     field.items.foreach(i => field = checkForUniqueness(field, i))
-    printBoard(field)
 
     return field
   }
@@ -453,8 +435,6 @@ object HitoriSolver
 
     if (nonConflict.isEmpty) return board
 
-
-    println("Fixing conflict with path!")
     return setCellWhite(board, nonConflict.head.x, nonConflict.head.y)
 
   }
@@ -466,14 +446,12 @@ object HitoriSolver
     * Ignores blacked cells
     *
     * @param board The board to scan
-    * @param item The item to compare to
+    * @param item  The item to compare to
     * @return A new board with changes only if the item was unique in its row/col
     */
   def checkForUniqueness(board: HBoard, item: HItem): HBoard =
   {
 
-
-    printBoard(board)
     if (item.state != "U") return board
 
     val row = board.items.filter(_.y == item.y).filter(i => i.state != "B")
@@ -608,58 +586,6 @@ object HitoriSolver
 
     return b
 
-    /*
-    var b = board
-    var field = board
-    var dup = unsolvedDuplicates(b)
-
-    var flag = true
-    var break = false
-
-    while(flag) {
-
-      flag = false
-      break = false
-
-      for (it <- dup) {
-        if(!break) {
-          field = setCellBlack(field, it.x, it.y)
-          field = standardCycle(field, it)
-          field = phase2(field)
-          field = phase3(field) //Rekursjon
-
-          val noDuplicates = rule1(field)
-
-          if(isSolved(field))
-            return field
-
-          if (!noDuplicates)
-          {
-            println("Solved item: " + it.x + " : " + it.y + "  =  " + it.value)
-            field = b
-            printBoard(field)
-            field = setCellWhite(field, it.x, it.y)
-            field = standardCycle(field, it)
-            field = phase2(field)
-            printBoard(field)
-            b = field
-            flag = true
-            break = true
-          }
-          else
-          {
-            field = b
-            println("Tried something but failed. Outcome is unknown!")
-            printBoard(b)
-            println("-----------------------------------------------")
-          }
-        }
-      }
-    }
-
-    //TODO: Create some sort of brute force ish algoritm
-    return field
-    */
   }
 
 
@@ -698,7 +624,6 @@ object HitoriSolver
         b = setCellBlack(b, itemToFix.x, itemToFix.y);
       }
     }
-    printBoard(b)
     return b;
   }
 
@@ -726,9 +651,6 @@ object HitoriSolver
   def setCellBlack(board: HBoard, xPos: Int, yPos: Int): HBoard =
   {
     val item = getCellXY(board, xPos, yPos);
-
-    if (item.state == "W")
-      println("Violating rule!")
 
     if (item.state != "U") return board;
 
