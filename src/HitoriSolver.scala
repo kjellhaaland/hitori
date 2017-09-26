@@ -29,12 +29,12 @@ object HitoriSolver
     * Represents a hitori board
     * Consists of a single list of HItems (Squares)
     *
-    * @param ROWS All rows in the board
+    * @param CELLS All rows in the board
     */
-  class HBoard(ROWS: List[HItem], VALID: Boolean = true)
+  class HBoard(CELLS: List[HItem], VALID: Boolean = true)
   {
-    val items = ROWS
-    val valid = VALID
+    val items = CELLS
+    val size  = (math.sqrt(this.items.length) - 1).toInt
   }
 
 
@@ -70,10 +70,12 @@ object HitoriSolver
     */
   def solvePuzzle(board: HBoard): HBoard =
   {
-
     var unsolvedItems = board.items.filter(m => m.state == "U");
 
     var b = board
+
+    if(!isBoardValid(b))
+      return b
 
     println("Entering phase 1...")
 
@@ -127,6 +129,7 @@ object HitoriSolver
 
     var b = board
 
+    b = patternOneTimesOne(b)
 
     val unsolvedItemsBefore = board.items.filter(m => m.state == "U");
 
@@ -225,8 +228,23 @@ object HitoriSolver
   }
 
   /**
+    * This pattern checks if the board is 1x1.
+    * @param board The board it checks
+    * @return a solved board with white cell.
+    */
+  def patternOneTimesOne(board: HBoard): HBoard =
+  {
+    if(board.size == 0) return setCellWhite(board, 0, 0)
+    return board
+  }
+
+  /**
     * This pattern finds triple corners (three similar values) and sets the parent cell as black
     * It compares a corner cell with neighbour cells
+    * @param board The board it checks
+    * @param itemA A item to check for the TripleCorner pattern
+    * @param itemB
+    * @return
     */
   def patternTripleCorner(board: HBoard, itemA: HItem, itemB: HItem): HBoard =
   {
@@ -553,7 +571,7 @@ object HitoriSolver
   def rule3(board: HBoard): Boolean =
   {
     val traversableItemsFirst = board.items.filter(i => i.state != "B")
-    var traversableItems = board.items.filter(i => i.state != "B")
+    var traversableItems = traversableItemsFirst
 
     var queue = Queue[HItem]()
     val visited = HashSet[HItem]()
@@ -563,6 +581,8 @@ object HitoriSolver
     while (!queue.isEmpty)
     {
       val item = queue.dequeue()
+
+      visited.add(item)
 
       traversableItems = traversableItems.filter(i => i.x != item.x && i.y != item.y)
 
@@ -733,11 +753,10 @@ object HitoriSolver
   def duplicates(board: HBoard): List[HItem] =
   {
 
-    val boardSize = (Math.sqrt(board.items.length) - 1).toInt
 
     var set: HashSet[HItem] = HashSet()
 
-    for (index <- 0 to boardSize)
+    for (index <- 0 to board.size)
     {
 
       val item = board.items.filter(i => i.x == index && i.y == index).head
@@ -825,9 +844,8 @@ object HitoriSolver
   def getCellXY(board: HBoard, xPos: Int, yPos: Int): HItem =
   {
 
-    val boardSize = Math.sqrt(board.items.length) - 1
 
-    if (xPos < 0 || yPos < 0 || xPos > boardSize || yPos > boardSize) return null
+    if (xPos < 0 || yPos < 0 || xPos > board.size || yPos > board.size) return null
 
     return board.items.filter(i => i.x == xPos).filter(i => i.y == yPos).head
   }
@@ -835,15 +853,13 @@ object HitoriSolver
   def printBoard(board: HBoard): Unit =
   {
 
-    val boardSize = math.sqrt(board.items.length) - 1;
-
     val b = new HBoard(board.items.sortWith(_.x < _.x).sortWith(_.y < _.y));
 
     println("------------------------------------------------")
-    for (y <- 0 to boardSize.toInt)
+    for (y <- 0 to board.size)
     {
 
-      for (x <- 0 to boardSize.toInt)
+      for (x <- 0 to board.size)
       {
         val item = getCellXY(b, x, y)
         print(item.state + " ")
@@ -888,6 +904,18 @@ object HitoriSolver
 
 
   /**
+    * Checks if the board is not 1x1 or symmetrical.
+    * @param board Takes in the board to check
+    * @return Boolean whether the board is valid or not
+    */
+  def isBoardValid(board: HBoard): Boolean =
+  {
+    if ((board.items.size / (board.size + 1)) != board.size + 1) return false
+
+    return true
+  }
+
+  /**
     * Load the file from the specified path
     *
     * @param inputPath The filepath of the board (Relative to the src folder)
@@ -896,7 +924,7 @@ object HitoriSolver
   def loadGameFromFile(inputPath: String): HBoard =
   {
     val puzzleFile = new File(inputPath)
-    val lines = scala.io.Source.fromFile(puzzleFile).mkString.split("\r\n");
+    val lines = scala.io.Source.fromFile(puzzleFile).mkString.split("\n");
 
     var board: HBoard = new HBoard(List())
 
@@ -913,6 +941,5 @@ object HitoriSolver
     return board
 
   }
-
 
 }
