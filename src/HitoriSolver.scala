@@ -342,61 +342,65 @@ object HitoriSolver
 
   /* Phase-2 functions */
 
-  def phase2(board: HBoard): HBoard =
+  /**
+    * Phase 2 takes all of the items that has the state 'U' and tries to paint them black
+    * If an item is painted black and an inconsistency occurs, we know it must be white.
+    * If an item is paintent black and no inconsistency orrycs, we know nothing abouts its future state
+    *
+    * After phase2 is completed, it checks if any of the unsolved items are uniqi in their row.
+    *
+    * IMPORTANT!
+    * Phase 2 will always return a valid board
+    *
+    * @param board A hitori board
+    * @return A new hitori board with possible valid modifications
+    */
+  def phase2(board:HBoard):HBoard =
+  {
+    var b = board
+    b = phase2Search(b)
+
+    b.items.foreach(i => b = checkIfItemWillBeBlocked(b, i))
+    b.items.foreach(i => b = checkForUniqueness(b, i))
+
+    return b
+  }
+
+
+  def phase2Search(board:HBoard):HBoard =
   {
 
-    var b = board
+    val b = board
     var field = board
 
-    var dup = unsolvedDuplicates(b)
+    val dup = unsolvedDuplicates(b)
 
-    var flag = true
-    var break = false
-
-    while (flag)
+    for (i <- dup)
     {
+      field = setCellBlack(field, i.x, i.y)
+      field = standardCycle(field, i)
 
-      flag = false
-      break = false
+      val noDuplicates = rule1(field)
 
-      //printBoard(field)
+      if (isSolved(field))
+        return field
 
-      for (it <- dup)
+      if (!noDuplicates)
       {
-        var i = it
-        if (!break)
-        {
-          field = setCellBlack(field, i.x, i.y)
-          field = standardCycle(field, i)
-
-          val noDuplicates = rule1(field)
-
-          if (isSolved(field))
-            return field
-
-          if (!noDuplicates)
-          {
-            field = b
-            field = setCellWhite(field, i.x, i.y)
-            field = standardCycle(field, i)
-            dup = unsolvedDuplicates(field)
-            b = field
-            flag = true
-            break = true
-          }
-          else
-          {
-            field = b
-          }
-        }
+        field = b
+        field = setCellWhite(field, i.x, i.y)
+        field = standardCycle(field, i)
+        return phase2Search(field)
+      }
+      else
+      {
+        field = b
       }
     }
 
-    field.items.foreach(i => field = checkIfItemWillBeBlocked(field, i))
-    field.items.foreach(i => field = checkForUniqueness(field, i))
-
     return field
   }
+
 
   def standardCycle(board: HBoard, item: HItem): HBoard =
   {
