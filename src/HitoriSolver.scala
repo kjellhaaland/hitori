@@ -29,12 +29,12 @@ object HitoriSolver
     * Represents a hitori board
     * Consists of a single list of HItems (Squares)
     *
-    * @param ROWS All rows in the board
+    * @param CELLS All rows in the board
     */
-  class HBoard(ROWS: List[HItem], VALID: Boolean = true)
+  class HBoard(CELLS: List[HItem], VALID: Boolean = true)
   {
-    val items = ROWS
-    val valid = VALID
+    val items = CELLS
+    val size  = (math.sqrt(this.items.length) - 1).toInt
   }
 
 
@@ -70,6 +70,8 @@ object HitoriSolver
     */
   def solvePuzzle(board: HBoard): HBoard =
   {
+    if(!isBoardValid(board))
+      return board
 
     var unsolvedItems = board.items.filter(m => m.state == "U");
 
@@ -733,11 +735,10 @@ object HitoriSolver
   def duplicates(board: HBoard): List[HItem] =
   {
 
-    val boardSize = (Math.sqrt(board.items.length) - 1).toInt
 
     var set: HashSet[HItem] = HashSet()
 
-    for (index <- 0 to boardSize)
+    for (index <- 0 to board.size)
     {
 
       val item = board.items.filter(i => i.x == index && i.y == index).head
@@ -825,9 +826,8 @@ object HitoriSolver
   def getCellXY(board: HBoard, xPos: Int, yPos: Int): HItem =
   {
 
-    val boardSize = Math.sqrt(board.items.length) - 1
 
-    if (xPos < 0 || yPos < 0 || xPos > boardSize || yPos > boardSize) return null
+    if (xPos < 0 || yPos < 0 || xPos > board.size || yPos > board.size) return null
 
     return board.items.filter(i => i.x == xPos).filter(i => i.y == yPos).head
   }
@@ -835,15 +835,13 @@ object HitoriSolver
   def printBoard(board: HBoard): Unit =
   {
 
-    val boardSize = math.sqrt(board.items.length) - 1;
-
     val b = new HBoard(board.items.sortWith(_.x < _.x).sortWith(_.y < _.y));
 
     println("------------------------------------------------")
-    for (y <- 0 to boardSize.toInt)
+    for (y <- 0 to board.size)
     {
 
-      for (x <- 0 to boardSize.toInt)
+      for (x <- 0 to board.size)
       {
         val item = getCellXY(b, x, y)
         print(item.state + " ")
@@ -884,6 +882,17 @@ object HitoriSolver
       return true
 
     return false
+  }
+
+
+  /**
+    * Checks if the board is not 1x1 or symmetrical.
+    * @param board Takes in the board to check
+    * @return Boolean whether the board is valid or not
+    */
+  def isBoardValid(board: HBoard): Boolean = {
+    if (board.size < 2 || (board.items.size / (board.size + 1)) != board.size + 1) return false
+    else return true
   }
 
 
