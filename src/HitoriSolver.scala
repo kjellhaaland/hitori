@@ -70,12 +70,12 @@ object HitoriSolver
     */
   def solvePuzzle(board: HBoard): HBoard =
   {
-    if(!isBoardValid(board))
-      return board
-
     var unsolvedItems = board.items.filter(m => m.state == "U");
 
     var b = board
+
+    if(!isBoardValid(b))
+      return b
 
     println("Entering phase 1...")
 
@@ -129,6 +129,7 @@ object HitoriSolver
 
     var b = board
 
+    b = patternOneTimesOne(b)
 
     val unsolvedItemsBefore = board.items.filter(m => m.state == "U");
 
@@ -227,8 +228,23 @@ object HitoriSolver
   }
 
   /**
+    * This pattern checks if the board is 1x1.
+    * @param board The board it checks
+    * @return a solved board with white cell.
+    */
+  def patternOneTimesOne(board: HBoard): HBoard =
+  {
+    if(board.size == 0) return setCellWhite(board, 0, 0)
+    return board
+  }
+
+  /**
     * This pattern finds triple corners (three similar values) and sets the parent cell as black
     * It compares a corner cell with neighbour cells
+    * @param board The board it checks
+    * @param itemA A item to check for the TripleCorner pattern
+    * @param itemB
+    * @return
     */
   def patternTripleCorner(board: HBoard, itemA: HItem, itemB: HItem): HBoard =
   {
@@ -555,7 +571,7 @@ object HitoriSolver
   def rule3(board: HBoard): Boolean =
   {
     val traversableItemsFirst = board.items.filter(i => i.state != "B")
-    var traversableItems = board.items.filter(i => i.state != "B")
+    var traversableItems = traversableItemsFirst
 
     var queue = Queue[HItem]()
     val visited = HashSet[HItem]()
@@ -565,7 +581,7 @@ object HitoriSolver
     while (!queue.isEmpty)
     {
       val item = queue.dequeue()
-
+      visited.add(item)
       traversableItems = traversableItems.filter(i => i.x != item.x && i.y != item.y)
 
       val neighbours = getAllNeighbours(board, item).filter(i => i != null).filter(i => i.state != "B")
@@ -890,11 +906,12 @@ object HitoriSolver
     * @param board Takes in the board to check
     * @return Boolean whether the board is valid or not
     */
-  def isBoardValid(board: HBoard): Boolean = {
-    if (board.size < 2 || (board.items.size / (board.size + 1)) != board.size + 1) return false
-    else return true
-  }
+  def isBoardValid(board: HBoard): Boolean =
+  {
+    if ((board.items.size / (board.size + 1)) != board.size + 1) return false
 
+    return true
+  }
 
   /**
     * Load the file from the specified path
@@ -922,6 +939,5 @@ object HitoriSolver
     return board
 
   }
-
 
 }
