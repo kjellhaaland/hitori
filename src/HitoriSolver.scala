@@ -81,7 +81,7 @@ object HitoriSolver
 
     b = phase1(b)
 
-    if (isSolved(b))
+    if (isConsistent(b))
       return b
 
     //printBoard(b)
@@ -92,7 +92,7 @@ object HitoriSolver
     // Phase 2 search
     b = phase2(b)
 
-    if (isSolved(b))
+    if (isConsistent(b))
       return b
 
     unsolvedItems = b.items.filter(m => m.state == "U");
@@ -106,7 +106,17 @@ object HitoriSolver
 
     println("Number of unsolved items: " + unsolvedItems.length)
 
-    return b
+
+    println("Checking for consistency")
+    val consistent = isConsistent(b)
+
+    if(consistent)
+      return b
+
+    // If the board was inconsistent, return the original board and print error message
+    println("The given board has no solution! Exiting....")
+
+    return board
   }
 
 
@@ -169,7 +179,7 @@ object HitoriSolver
       // Pattern 6 - Flipped Triple Corner
       b = patternFlippedTripleCorner(b, item)
     }
-    
+
     return b
   }
 
@@ -250,19 +260,20 @@ object HitoriSolver
   def patternFlippedTripleCorner(board: HBoard, itemA: HItem): HBoard =
   {
 
-    val f = itemA match {
+    val f = itemA match
+    {
       case i if isInCorner(board, i) == "TL"
         && getCellXY(board, i.x + 1, i.y).value == getCellXY(board, i.x + 1, i.y + 1).value
-        && getCellXY(board, i.x , i.y + 1).value == getCellXY(board, i.x + 1 , i.y + 1).value => setCellBlack(board, i.x + 1, i.y + 1)
+        && getCellXY(board, i.x, i.y + 1).value == getCellXY(board, i.x + 1, i.y + 1).value => setCellBlack(board, i.x + 1, i.y + 1)
       case i if isInCorner(board, i) == "BL"
         && getCellXY(board, i.x + 1, i.y).value == getCellXY(board, i.x + 1, i.y - 1).value
-        && getCellXY(board, i.x , i.y - 1).value == getCellXY(board, i.x +1 , i.y - 1).value => setCellBlack(board, i.x + 1, i.y - 1)
+        && getCellXY(board, i.x, i.y - 1).value == getCellXY(board, i.x + 1, i.y - 1).value => setCellBlack(board, i.x + 1, i.y - 1)
       case i if isInCorner(board, i) == "TR"
         && getCellXY(board, i.x - 1, i.y).value == getCellXY(board, i.x - 1, i.y + 1).value
-        && getCellXY(board, i.x , i.y + 1).value == getCellXY(board, i.x - 1 , i.y + 1).value => setCellBlack(board, i.x - 1, i.y + 1)
+        && getCellXY(board, i.x, i.y + 1).value == getCellXY(board, i.x - 1, i.y + 1).value => setCellBlack(board, i.x - 1, i.y + 1)
       case i if isInCorner(board, i) == "BR"
         && getCellXY(board, i.x - 1, i.y).value == getCellXY(board, i.x - 1, i.y - 1).value
-        && getCellXY(board, i.x , i.y - 1).value == getCellXY(board, i.x - 1 , i.y - 1).value => setCellBlack(board, i.x - 1, i.y - 1)
+        && getCellXY(board, i.x, i.y - 1).value == getCellXY(board, i.x - 1, i.y - 1).value => setCellBlack(board, i.x - 1, i.y - 1)
 
       case _ => board
     }
@@ -355,7 +366,7 @@ object HitoriSolver
     * @param board A hitori board
     * @return A new hitori board with possible valid modifications
     */
-  def phase2(board:HBoard):HBoard =
+  def phase2(board: HBoard): HBoard =
   {
     var b = board
     b = phase2Search(b)
@@ -367,7 +378,7 @@ object HitoriSolver
   }
 
 
-  def phase2Search(board:HBoard):HBoard =
+  def phase2Search(board: HBoard): HBoard =
   {
 
     val b = board
@@ -382,7 +393,7 @@ object HitoriSolver
 
       val noDuplicates = rule1(field)
 
-      if (isSolved(field))
+      if (isConsistent(field))
         return field
 
       if (!noDuplicates)
@@ -503,6 +514,33 @@ object HitoriSolver
   }
 
   /**
+    * Hitori rule 2
+    * "Black cells are never adjacent in a row or column."
+    *
+    * Checks if there are two black cells adjacent to each other
+    *
+    * @param board The board to check for inconistensies
+    * @return True if no errors, false if errors
+    */
+  def rule2(board: HBoard): Boolean =
+  {
+
+    board.items.foreach(item =>
+    {
+
+      if (item.state == "B")
+      {
+        val blackNeighbours = getAllNeighbours(board,item).filter(i => i != null).filter(i => i.state == "B")
+
+        if(blackNeighbours.nonEmpty)
+          return false
+      }
+    })
+
+    return true
+  }
+
+  /**
     * Hitori rule 3
     * "Unpainted cells create a single continous area, undivided by painted cells"
     *
@@ -567,7 +605,7 @@ object HitoriSolver
       b = phase2(b)
       b = phase3(b)
 
-      if (isSolved(b))
+      if (isConsistent(b))
         return b
 
       val rule_1 = rule1(b)
@@ -783,20 +821,6 @@ object HitoriSolver
     return i;
   }
 
-  def isOnEdge(board: HBoard, itemA: HItem): String =
-  {
-    val bs = math.sqrt(board.items.length) - 1
-
-    itemA match
-    {
-      case i if i.x == 0 => "LE"
-      case i if i.x == bs => "RE"
-      case i if i.y == 0 => "TE"
-      case i if i.y == bs => "BE"
-      case _ => "F"
-    }
-  }
-
   def getCellXY(board: HBoard, xPos: Int, yPos: Int): HItem =
   {
 
@@ -841,17 +865,26 @@ object HitoriSolver
     return List(left, right, up, down)
   }
 
-  def isSolved(board: HBoard): Boolean =
+  /**
+    * Checks if the board is solved
+    * Uses the three rules of Hitori and checks if all cells is in a black or white cell
+    *
+    * @param board The board to check for consistency
+    * @return True if consistent, false if not
+    */
+  def isConsistent(board:HBoard):Boolean =
   {
-    val noWhiteDuplicates = rule1(board)
+    val noDuplicates = rule1(board)
+    val noBlackNeighbours = rule2(board)
     val isConnected = rule3(board)
-    val unsolvedItems = board.items.filter(m => m.state == "U");
+    val noUnsolvedItems = board.items.filter(m => m.state == "U").isEmpty;
 
-    if (noWhiteDuplicates && isConnected && unsolvedItems.length < 1)
+    if(noDuplicates && noBlackNeighbours && isConnected && noUnsolvedItems)
       return true
 
     return false
   }
+
 
   /**
     * Load the file from the specified path
