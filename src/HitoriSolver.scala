@@ -136,6 +136,7 @@ object HitoriSolver
 
     if (unsolvedItemsBefore.length == unsolvedItemsAfter.length)
     {
+      b.items.foreach(i => b = checkForUniqueness(b, i))
       return b
     }
     else
