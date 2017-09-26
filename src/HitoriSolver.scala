@@ -581,7 +581,9 @@ object HitoriSolver
     while (!queue.isEmpty)
     {
       val item = queue.dequeue()
+
       visited.add(item)
+
       traversableItems = traversableItems.filter(i => i.x != item.x && i.y != item.y)
 
       val neighbours = getAllNeighbours(board, item).filter(i => i != null).filter(i => i.state != "B")
@@ -922,7 +924,7 @@ object HitoriSolver
   def loadGameFromFile(inputPath: String): HBoard =
   {
     val puzzleFile = new File(inputPath)
-    val lines = scala.io.Source.fromFile(puzzleFile).mkString.split("\r\n");
+    val lines = scala.io.Source.fromFile(puzzleFile).mkString.split("\n");
 
     var board: HBoard = new HBoard(List())
 
