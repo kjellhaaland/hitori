@@ -1,13 +1,10 @@
 import java.io.{File, PrintWriter}
-import javax.swing.plaf.metal.MetalBorders.TableHeaderBorder
-
 import scala.collection.mutable.HashSet
 import scala.collection.mutable.Queue
 
 
 object HitoriSolver
 {
-
 
   /**
     * Represents a square or element in a hitori board
@@ -57,6 +54,8 @@ object HitoriSolver
     printBoard(solvedPuzzle)
 
     println("Solved puzzle in: " + (endTime - startTime) + " milliseconds")
+
+    saveSolvedPuzzle(solvedPuzzle, outputPath)
   }
 
 
@@ -780,21 +779,6 @@ object HitoriSolver
     return duplicates(board).filter(i => i.state == "U")
   }
 
-  def saveSolvedPuzzle(board: HBoard, outputPath: String): Unit =
-  {
-    // Solve puzzle and output to file, like so:
-
-    var outputFile = new PrintWriter(new File(outputPath), "UTF-8")
-
-    outputFile.println("b w w w w")
-    outputFile.println("W B W B W")
-    outputFile.println("W W W W B")
-    outputFile.println("W W B W W")
-    outputFile.println("B W W W B")
-
-    outputFile.close()
-  }
-
   def isNextToDuplicate(itemA: HItem, itemB: HItem): String =
   {
     itemA match
@@ -902,7 +886,6 @@ object HitoriSolver
     return false
   }
 
-
   /**
     * Checks if the board is not 1x1 or symmetrical.
     * @param board Takes in the board to check
@@ -916,6 +899,33 @@ object HitoriSolver
   }
 
   /**
+    *
+    * @param board
+    * @param outputPath
+    */
+  def saveSolvedPuzzle(board: HBoard, outputPath: String): Unit =
+  {
+    // Solve puzzle and output to file, like so:
+
+    val outputFile = new PrintWriter(new File(outputPath), "UTF-8")
+    val b = new HBoard(board.items.sortWith(_.x < _.x).sortWith(_.y < _.y));
+
+    for (y <- 0 to board.size)
+    {
+
+      for (x <- 0 to board.size)
+      {
+        val item = getCellXY(b, x, y)
+        outputFile.print(item.state + " ")
+      }
+
+      outputFile.print("\n")
+    }
+
+    outputFile.close()
+  }
+
+  /**
     * Load the file from the specified path
     *
     * @param inputPath The filepath of the board (Relative to the src folder)
@@ -924,7 +934,7 @@ object HitoriSolver
   def loadGameFromFile(inputPath: String): HBoard =
   {
     val puzzleFile = new File(inputPath)
-    val lines = scala.io.Source.fromFile(puzzleFile).mkString.split("\n");
+    val lines = scala.io.Source.fromFile(puzzleFile).mkString.split("\r\n");
 
     var board: HBoard = new HBoard(List())
 
