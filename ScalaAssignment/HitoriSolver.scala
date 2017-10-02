@@ -164,6 +164,7 @@ object HitoriSolver
 
     for (i <- conflicts)
     {
+
       // Pattern 1 - Sandwich
       b = patternSandwich(b, item, i)
 
@@ -181,11 +182,43 @@ object HitoriSolver
 
       // Pattern 6 - Flipped Triple Corner
       b = patternFlippedTripleCorner(b, item)
+
+      b = patternPairIsolation(b,item)
     }
 
     return b
   }
 
+  def patternPairIsolation(board: HBoard, item: HItem): HBoard =
+  {
+
+    var b = board
+
+    val row = board.items.filter(_.y == item.y)
+    val conflictsRow: List[HItem] = row.zipWithIndex.filter(_._1.value == item.value).filter(_._1.state == "U").map(_._1)
+
+    val col = board.items.filter(_.x == item.x)
+    val conflictsCol: List[HItem] = col.zipWithIndex.filter(_._1.value == item.value).filter(_._1.state == "U").map(_._1)
+
+    conflictsRow.foreach(i =>
+    {
+      if (isNextToDuplicate(item, i) != "F")
+      {
+        conflictsRow.filter(j => j.x != item.x && j.y != item.y).filter(j => j.x != i.x && j.y != i.y).foreach(j => b = setCellBlack(b, j.x, j.y))
+      }
+
+    })
+
+    conflictsCol.foreach(i =>
+    {
+      if (isNextToDuplicate(item, i) != "F")
+      {
+        conflictsCol.filter(j => j.x != item.x && j.y != item.y).filter(j => j.x != i.x && j.y != i.y).foreach(j => b = setCellBlack(b, j.x, j.y))
+      }
+    })
+
+    return b
+  }
 
   /** This section contains patterns that is used in phase 1 to solve different situations.
     * Every patterns should at least take a board and a item as input.
@@ -635,10 +668,7 @@ object HitoriSolver
       {
         b = backup
         b = setCellWhite(b, i.x, i.y)
-        b = standardCycle(b, i)
-        b = phase2(b)
         backup = b
-        b = phase3(b)
       } else
       {
         b = backup
