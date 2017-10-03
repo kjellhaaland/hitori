@@ -65,7 +65,7 @@ object HitoriSolver
     * Main function of control
     *
     * @param board The Hitori board to solve
-    * @return A hitori board with one or more cells solved
+    * @return Either a solved board (No unsolved items) or a non-consistent board (All unsolved items)
     */
   def solvePuzzle(board: HBoard): HBoard =
   {
@@ -82,7 +82,7 @@ object HitoriSolver
 
     b = phase1(b)
 
-    if (isConsistent(b))
+    if (isSolved(b))
       return b
 
     //printBoard(b)
@@ -93,7 +93,7 @@ object HitoriSolver
     // Phase 2 search
     b = phase2(b)
 
-    if (isConsistent(b))
+    if (isSolved(b))
       return b
 
     unsolvedItems = b.items.filter(m => m.state == "U");
@@ -109,7 +109,7 @@ object HitoriSolver
 
 
     println("Checking for consistency")
-    val consistent = isConsistent(b)
+    val consistent = isSolved(b)
 
     if(consistent)
       return b
@@ -123,6 +123,12 @@ object HitoriSolver
 
   /* Phase-1 functions */
 
+  /**
+    * Performs phase 1 search until no changes in the board occures between two iterations
+    *
+    * @param board The board to search for patterns
+    * @return A partially solved board, or a completly solved board (If easy)
+    */
   def phase1(board: HBoard): HBoard =
   {
 
@@ -147,6 +153,14 @@ object HitoriSolver
     }
   }
 
+  /**
+    * Uses pattern-functions to search for patterns relative to the given item.
+    * Finds all duplicates in the board and runs tests.
+    *
+    * @param board A hitori board
+    * @param item A item to look for patterns
+    * @return A partially solved board, or a completly solved board (If easy)
+    */
   def phase1Search(board: HBoard, item: HItem): HBoard =
   {
 
@@ -183,12 +197,29 @@ object HitoriSolver
       // Pattern 6 - Flipped Triple Corner
       b = patternFlippedTripleCorner(b, item)
 
+      // Pattern 7 - Pair isolation
       b = patternPairIsolation(b,item)
     }
 
     return b
   }
 
+  /** This section contains patterns that is used in phase 1 to solve different situations.
+    * Every patterns should at least take a board and a item as input.
+    * All patterns needs to return a new board (Altered or not)
+    *
+    * All patterns functions should be named after the following convention: patternSomeName
+    */
+
+  /**
+    * Patterns that checks if there are any neigbour duplicates to the given item
+    * If neighbour duplicates exist, all other duplicates in its corresponding row/col
+    * can be painted black
+    *
+    * @param board A hitori board
+    * @param item The item to check for duplicates and neighbours
+    * @return A new hitori board
+    */
   def patternPairIsolation(board: HBoard, item: HItem): HBoard =
   {
 
@@ -220,13 +251,14 @@ object HitoriSolver
     return b
   }
 
-  /** This section contains patterns that is used in phase 1 to solve different situations.
-    * Every patterns should at least take a board and a item as input.
-    * All patterns needs to return a new board (Altered or not)
+  /**
+    * Checks if the given items can be related to the double corner pattern
     *
-    * All patterns functions should be named after the following convention: patternSomeName
+    * @param board A hitori board
+    * @param itemA Main item
+    * @param itemB Item to check for relations
+    * @return A partially solved hitori board
     */
-
   def patternDoubleCorner(board: HBoard, itemA: HItem, itemB: HItem): HBoard =
   {
     val f = itemA match
@@ -361,6 +393,14 @@ object HitoriSolver
     return f
   }
 
+  /**
+    * Checks if the given items is related to the sandwich pattern
+    *
+    * @param board A hitori board
+    * @param itemA Main item
+    * @param itemB Item to check for relations
+    * @return A partially solved hitori board
+    */
   def patternSandwich(board: HBoard, itemA: HItem, itemB: HItem): HBoard =
   {
     itemA match
@@ -405,11 +445,9 @@ object HitoriSolver
   /* Phase-2 functions */
 
   /**
-    * Phase 2 takes all of the items that has the state 'U' and tries to paint them black
-    * If an item is painted black and an inconsistency occurs, we know it must be white.
-    * If an item is paintent black and no inconsistency orrycs, we know nothing abouts its future state
-    *
-    * After phase2 is completed, it checks if any of the unsolved items are uniqi in their row.
+    * Performes phase 2 search
+    * After phase2 is completed, it checks if any of the unsolved items are unique in their row.
+    * Also checks if any of the changes violates the third rule.
     *
     * IMPORTANT!
     * Phase 2 will always return a valid board
@@ -429,6 +467,14 @@ object HitoriSolver
   }
 
 
+  /**
+    * Phase 2 search takes all of the items that has duplicates and has the state 'U' and tries to paint them black
+    * If an item is painted black and an inconsistency occurs, we know it must be white.
+    * If an item is paintent black and no inconsistency orrycs, we know nothing abouts its future state
+    *
+    * @param board A hitori board
+    * @return A new hitori board with possible valid modifications
+    */
   def phase2Search(board: HBoard): HBoard =
   {
 
@@ -444,7 +490,7 @@ object HitoriSolver
 
       val noDuplicates = rule1(field)
 
-      if (isConsistent(field))
+      if (isSolved(field))
         return field
 
       if (!noDuplicates)
@@ -463,7 +509,12 @@ object HitoriSolver
     return field
   }
 
-
+  /**
+    *
+    * @param board
+    * @param item
+    * @return
+    */
   def standardCycle(board: HBoard, item: HItem): HBoard =
   {
 
@@ -658,7 +709,7 @@ object HitoriSolver
       b = phase2(b)
       b = phase3(b)
 
-      if (isConsistent(b))
+      if (isSolved(b))
         return b
 
       val rule_1 = rule1(b)
@@ -900,21 +951,26 @@ object HitoriSolver
     * Checks if the board is solved
     * Uses the three rules of Hitori and checks if all cells is in a black or white cell
     *
-    * @param board The board to check for consistency
+    * @param board The board to check if is consistent and solved
     * @return True if consistent, false if not
     */
+  def isSolved(board:HBoard):Boolean =
+  {
+    if(board.items.filter(m => m.state == "U").nonEmpty) return false
+    if(!isConsistent(board)) return false
+
+    return true
+  }
+
   def isConsistent(board:HBoard):Boolean =
   {
-    val noDuplicates = rule1(board)
-    val noBlackNeighbours = rule2(board)
-    val isConnected = rule3(board)
-    val noUnsolvedItems = board.items.filter(m => m.state == "U").isEmpty;
+    if(!rule1(board)) return false
+    if(!rule2(board)) return false
+    if(!rule3(board)) return false
 
-    if(noDuplicates && noBlackNeighbours && isConnected && noUnsolvedItems)
-      return true
-
-    return false
+    return true
   }
+
 
   /**
     * Checks if the board is not 1x1 or symmetrical.
