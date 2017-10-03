@@ -34,7 +34,10 @@ object HitoriSolver
     val size  = (math.sqrt(this.items.length) - 1).toInt
   }
 
-
+  /**
+    *
+    * @param args input and output path
+    */
   def main(args: Array[String])
   {
 
@@ -186,7 +189,7 @@ object HitoriSolver
       b = patternDoubleCorner(b, item, i)
 
       // Pattern 3 - Triple corner
-      b = patternTripleCorner(b, item, i)
+      b = patternTripleCorner(b, item)
 
       // Pattern 4 - Quad corner
       b = patternQuadCorner(b, item, i)
@@ -205,7 +208,7 @@ object HitoriSolver
   }
 
   /** This section contains patterns that is used in phase 1 to solve different situations.
-    * Every patterns should at least take a board and a item as input.
+    * Every patterns should at least take a board and an item as input.
     * All patterns needs to return a new board (Altered or not)
     *
     * All patterns functions should be named after the following convention: patternSomeName
@@ -303,14 +306,17 @@ object HitoriSolver
   }
 
   /**
-    * This pattern finds triple corners (three similar values) and sets the parent cell as black
-    * It compares a corner cell with neighbour cells
+    * This pattern finds triple corners (three similar values) and sets the parent itemas black
+    * It compares a corner itemwith neighbour cells
+    *   X X O
+    *   X O O
+    *   O O O
+    *
     * @param board The board it checks
     * @param itemA A item to check for the TripleCorner pattern
-    * @param itemB
     * @return
     */
-  def patternTripleCorner(board: HBoard, itemA: HItem, itemB: HItem): HBoard =
+  def patternTripleCorner(board: HBoard, itemA: HItem): HBoard =
   {
     /*
     1. Sjekk om det er et hjørne
@@ -322,41 +328,17 @@ object HitoriSolver
     val f = itemA match
     {
       case i if isInCorner(board, i) == "TL"
-        && i.value == getCellXY(board, i.x + 1, i.y).value
-        && i.value == getCellXY(board, i.x, i.y + 1).value => setCellBlack(board, i.x, i.y)
+        && i.value == getItemXY(board, i.x + 1, i.y).value
+        && i.value == getItemXY(board, i.x, i.y + 1).value => setCellBlack(board, i.x, i.y)
       case i if isInCorner(board, i) == "BL"
-        && i.value == getCellXY(board, i.x + 1, i.y).value
-        && i.value == getCellXY(board, i.x, i.y - 1).value => setCellBlack(board, i.x, i.y)
+        && i.value == getItemXY(board, i.x + 1, i.y).value
+        && i.value == getItemXY(board, i.x, i.y - 1).value => setCellBlack(board, i.x, i.y)
       case i if isInCorner(board, i) == "TR"
-        && i.value == getCellXY(board, i.x - 1, i.y).value
-        && i.value == getCellXY(board, i.x, i.y + 1).value => setCellBlack(board, i.x, i.y)
+        && i.value == getItemXY(board, i.x - 1, i.y).value
+        && i.value == getItemXY(board, i.x, i.y + 1).value => setCellBlack(board, i.x, i.y)
       case i if isInCorner(board, i) == "BR"
-        && i.value == getCellXY(board, i.x - 1, i.y).value
-        && i.value == getCellXY(board, i.x, i.y - 1).value => setCellBlack(board, i.x, i.y)
-
-      case _ => board
-    }
-
-    return f
-  }
-
-  def patternFlippedTripleCorner(board: HBoard, itemA: HItem): HBoard =
-  {
-
-    val f = itemA match
-    {
-      case i if isInCorner(board, i) == "TL"
-        && getCellXY(board, i.x + 1, i.y).value == getCellXY(board, i.x + 1, i.y + 1).value
-        && getCellXY(board, i.x, i.y + 1).value == getCellXY(board, i.x + 1, i.y + 1).value => setCellBlack(board, i.x + 1, i.y + 1)
-      case i if isInCorner(board, i) == "BL"
-        && getCellXY(board, i.x + 1, i.y).value == getCellXY(board, i.x + 1, i.y - 1).value
-        && getCellXY(board, i.x, i.y - 1).value == getCellXY(board, i.x + 1, i.y - 1).value => setCellBlack(board, i.x + 1, i.y - 1)
-      case i if isInCorner(board, i) == "TR"
-        && getCellXY(board, i.x - 1, i.y).value == getCellXY(board, i.x - 1, i.y + 1).value
-        && getCellXY(board, i.x, i.y + 1).value == getCellXY(board, i.x - 1, i.y + 1).value => setCellBlack(board, i.x - 1, i.y + 1)
-      case i if isInCorner(board, i) == "BR"
-        && getCellXY(board, i.x - 1, i.y).value == getCellXY(board, i.x - 1, i.y - 1).value
-        && getCellXY(board, i.x, i.y - 1).value == getCellXY(board, i.x - 1, i.y - 1).value => setCellBlack(board, i.x - 1, i.y - 1)
+        && i.value == getItemXY(board, i.x - 1, i.y).value
+        && i.value == getItemXY(board, i.x, i.y - 1).value => setCellBlack(board, i.x, i.y)
 
       case _ => board
     }
@@ -365,28 +347,62 @@ object HitoriSolver
   }
 
   /**
-    * This pattern finds quad corners (four similar values) and sets the parent cell and closest diagonal cell black.
+    * This pattern finds a flipped triple corner, and sets the innermost itemto black.
+    *   O X O
+    *   X X O
+    *   O O O
+    *
+    * @param board The board it checks
+    * @param itemA A item to check for the flipper TripleCorner pattern
+    * @return
+    */
+  def patternFlippedTripleCorner(board: HBoard, itemA: HItem): HBoard =
+  {
+
+    val f = itemA match
+    {
+      case i if isInCorner(board, i) == "TL"
+        && getItemXY(board, i.x + 1, i.y).value == getItemXY(board, i.x + 1, i.y + 1).value
+        && getItemXY(board, i.x, i.y + 1).value == getItemXY(board, i.x + 1, i.y + 1).value => setCellBlack(board, i.x + 1, i.y + 1)
+      case i if isInCorner(board, i) == "BL"
+        && getItemXY(board, i.x + 1, i.y).value == getItemXY(board, i.x + 1, i.y - 1).value
+        && getItemXY(board, i.x, i.y - 1).value == getItemXY(board, i.x + 1, i.y - 1).value => setCellBlack(board, i.x + 1, i.y - 1)
+      case i if isInCorner(board, i) == "TR"
+        && getItemXY(board, i.x - 1, i.y).value == getItemXY(board, i.x - 1, i.y + 1).value
+        && getItemXY(board, i.x, i.y + 1).value == getItemXY(board, i.x - 1, i.y + 1).value => setCellBlack(board, i.x - 1, i.y + 1)
+      case i if isInCorner(board, i) == "BR"
+        && getItemXY(board, i.x - 1, i.y).value == getItemXY(board, i.x - 1, i.y - 1).value
+        && getItemXY(board, i.x, i.y - 1).value == getItemXY(board, i.x - 1, i.y - 1).value => setCellBlack(board, i.x - 1, i.y - 1)
+
+      case _ => board
+    }
+
+    return f
+  }
+
+  /**
+    * This pattern finds quad corners (four similar values) and sets the parent itemand closest diagonal itemblack.
     */
   def patternQuadCorner(board: HBoard, itemA: HItem, itemB: HItem): HBoard =
   {
     val f = itemA match
     {
       case i if isInCorner(board, i) == "TL"
-        && i.value == getCellXY(board, i.x + 1, i.y).value //
-        && i.value == getCellXY(board, i.x, i.y + 1).value
-        && i.value == getCellXY(board, i.x + 1, i.y + 1).value => setCellBlack(board, i.x, i.y); setCellBlack(board, i.x + 1, i.y + 1)
+        && i.value == getItemXY(board, i.x + 1, i.y).value //
+        && i.value == getItemXY(board, i.x, i.y + 1).value
+        && i.value == getItemXY(board, i.x + 1, i.y + 1).value => setCellBlack(board, i.x, i.y); setCellBlack(board, i.x + 1, i.y + 1)
       case i if isInCorner(board, i) == "BL"
-        && i.value == getCellXY(board, i.x + 1, i.y).value
-        && i.value == getCellXY(board, i.x, i.y - 1).value
-        && i.value == getCellXY(board, i.x + 1, i.y - 1).value => setCellBlack(board, i.x, i.y); setCellBlack(board, i.x + 1, i.y - 1)
+        && i.value == getItemXY(board, i.x + 1, i.y).value
+        && i.value == getItemXY(board, i.x, i.y - 1).value
+        && i.value == getItemXY(board, i.x + 1, i.y - 1).value => setCellBlack(board, i.x, i.y); setCellBlack(board, i.x + 1, i.y - 1)
       case i if isInCorner(board, i) == "TR"
-        && i.value == getCellXY(board, i.x - 1, i.y).value
-        && i.value == getCellXY(board, i.x, i.y + 1).value
-        && i.value == getCellXY(board, i.x - 1, i.y + 1).value => setCellBlack(board, i.x, i.y); setCellBlack(board, i.x - 1, i.y + 1)
+        && i.value == getItemXY(board, i.x - 1, i.y).value
+        && i.value == getItemXY(board, i.x, i.y + 1).value
+        && i.value == getItemXY(board, i.x - 1, i.y + 1).value => setCellBlack(board, i.x, i.y); setCellBlack(board, i.x - 1, i.y + 1)
       case i if isInCorner(board, i) == "BR"
-        && i.value == getCellXY(board, i.x - 1, i.y).value
-        && i.value == getCellXY(board, i.x, i.y - 1).value
-        && i.value == getCellXY(board, i.x - 1, i.y - 1).value => setCellBlack(board, i.x, i.y); setCellBlack(board, i.x - 1, i.y - 1)
+        && i.value == getItemXY(board, i.x - 1, i.y).value
+        && i.value == getItemXY(board, i.x, i.y - 1).value
+        && i.value == getItemXY(board, i.x - 1, i.y - 1).value => setCellBlack(board, i.x, i.y); setCellBlack(board, i.x - 1, i.y - 1)
       case _ => board
     }
 
@@ -413,7 +429,6 @@ object HitoriSolver
     }
 
   }
-
 
   /**
     * Pattern that determines it an item can be solved using the triple rule
@@ -442,6 +457,7 @@ object HitoriSolver
     return b
   }
 
+
   /* Phase-2 functions */
 
   /**
@@ -465,7 +481,6 @@ object HitoriSolver
 
     return b
   }
-
 
   /**
     * Phase 2 search takes all of the items that has duplicates and has the state 'U' and tries to paint them black
@@ -526,14 +541,14 @@ object HitoriSolver
   }
 
   /**
-    * Checks if a item is surounded with three black items (or edges)
+    * Checks if an item is surounded with three black items (or edges)
     * If surrounded, the remaining unknown item must be white.
     *
-    * If surrounded, the unknown cell is set as white
+    * If surrounded, the unknown itemis set as white
     *
     * @param board The board containing the item
     * @param itemA The item to check for black items
-    * @return The board, altered if unknown cell is set to white.
+    * @return The board, altered if unknown itemis set to white.
     */
   def checkIfItemWillBeBlocked(board: HBoard, itemA: HItem): HBoard =
   {
@@ -560,7 +575,7 @@ object HitoriSolver
     * Checks if there exist any duplicates of the given item in its row or column
     * If there are no errors, the item is set to white.
     *
-    * Ignores blacked cells
+    * Ignores blacked items
     *
     * @param board The board to scan
     * @param item  The item to compare to
@@ -617,9 +632,9 @@ object HitoriSolver
 
   /**
     * Hitori rule 2
-    * "Black cells are never adjacent in a row or column."
+    * "Black items are never adjacent in a row or column."
     *
-    * Checks if there are two black cells adjacent to each other
+    * Checks if there are two black items adjacent to each other
     *
     * @param board The board to check for inconistensies
     * @return True if no errors, false if errors
@@ -644,9 +659,9 @@ object HitoriSolver
 
   /**
     * Hitori rule 3
-    * "Unpainted cells create a single continous area, undivided by painted cells"
+    * "Unpainted items create a single continous area, undivided by painted items"
     *
-    * Checkis if all items are connected.
+    * Checks if all items are connected.
     *
     * @param board The board to check for inconistensies
     * @return True if no errors, false if errors
@@ -733,16 +748,23 @@ object HitoriSolver
 
 
   /* General functions */
-
+  /**
+    * Sets duplicates in row/col of a white item to black
+    *
+    * @param board The board to check
+    * @param xPos xPos of the item in the board
+    * @param yPos yPos of the item in the board
+    * @return A new board
+    */
   def setDuplicatesBlack(board: HBoard, xPos: Int, yPos: Int): HBoard =
   {
 
     // The white cell
-    val item = getCellXY(board, xPos, yPos);
+    val item = getItemXY(board, xPos, yPos);
 
     var b = board;
 
-    // All elements in the white cells's row
+    // All elements in the white items's row
     val row = b.items.filter(m => m.y == item.y);
     val conflictsRow: List[HItem] = row.zipWithIndex.filter(_._1.value == item.value).filter(_._1.state == "U").map(_._1)
 
@@ -755,7 +777,7 @@ object HitoriSolver
       }
     }
 
-    // All elements in the white cells's col
+    // All elements in the white items's col
     val col = b.items.filter(m => m.x == item.x);
     val conflictsCol: List[HItem] = col.zipWithIndex.filter(_._1.value == item.value).filter(_._1.state == "U").map(_._1)
 
@@ -770,9 +792,17 @@ object HitoriSolver
     return b;
   }
 
+  /**
+    * Sets the edges of an given item white. (left, right, top, bottom)
+    *
+    * @param board The board to check
+    * @param xPos xPos of the item in the board
+    * @param yPos yPos of the item in the board
+    * @return A new board
+    */
   def setEdgesWhite(board: HBoard, xPos: Int, yPos: Int): HBoard =
   {
-    val item = getCellXY(board, xPos, yPos);
+    val item = getItemXY(board, xPos, yPos);
 
     var b = board;
 
@@ -791,9 +821,19 @@ object HitoriSolver
     return b;
   }
 
+  /**
+    * Sets an item black.
+    * After setting an itemblack, it also sets the edges of the items white by running setEdgesWhite.
+    * See setEdgesWhite.
+    *
+    * @param board The board to check
+    * @param xPos xPos of the item in the board
+    * @param yPos yPos of the item in the board
+    * @return A new board
+    */
   def setCellBlack(board: HBoard, xPos: Int, yPos: Int): HBoard =
   {
-    val item = getCellXY(board, xPos, yPos);
+    val item = getItemXY(board, xPos, yPos);
 
     if (item.state != "U") return board;
 
@@ -801,9 +841,20 @@ object HitoriSolver
     return setEdgesWhite(b, xPos, yPos)
   }
 
+  /**
+    * Sets an item white.
+    * After setting an itemwhite, it runs function setDuplicates black,
+    * which looks for duplicates in row and col and sets them to black and returns a new board.
+    * See setDuplicatesBlack.
+    *
+    * @param board Board to check
+    * @param xPos xPos of the item in the board
+    * @param yPos yPos of the item in the board
+    * @return A new board
+    */
   def setCellWhite(board: HBoard, xPos: Int, yPos: Int): HBoard =
   {
-    val item = getCellXY(board, xPos, yPos);
+    val item = getItemXY(board, xPos, yPos);
 
     if (item.state != "U") return board;
 
@@ -812,24 +863,15 @@ object HitoriSolver
     return setDuplicatesBlack(b, xPos, yPos);
   }
 
-  def setCellBlackSimple(board: HBoard, item: HItem): HBoard =
-  {
-
-    if (item.state != "U") return board;
-
-    return new HBoard(board.items.map(m => if (m.x == item.x && m.y == item.y) new HItem(item.value, item.x, item.y, "B") else m));
-  }
-
-  def setCellWhiteSimple(board: HBoard, item: HItem): HBoard =
-  {
-    if (item.state != "U") return board;
-
-    return new HBoard(board.items.map(m => if (m.x == item.x && m.y == item.y) new HItem(item.value, item.x, item.y, "W") else m));
-  }
-
 
   /* Helper functions */
 
+  /**
+    * Find all duplicates in the board (row and col)
+    *
+    * @param board The board to check
+    * @return A list with duplicates
+    */
   def duplicates(board: HBoard): List[HItem] =
   {
 
@@ -855,11 +897,24 @@ object HitoriSolver
 
   }
 
+  /**
+    * Returns a list with unsolved duplicates
+    *
+    * @param board the board to check
+    * @return a list with unsolved duplicates
+    */
   def unsolvedDuplicates(board: HBoard): List[HItem] =
   {
     return duplicates(board).filter(i => i.state == "U")
   }
 
+  /**
+    * Checks if the item is next to a duplicate
+    *
+    * @param itemA An item to check if it is next to duplicate
+    * @param itemB An item from a duplicate list to check with itemA
+    * @return returns a string indicating where the duplicate is relative to itemA
+    */
   def isNextToDuplicate(itemA: HItem, itemB: HItem): String =
   {
     itemA match
@@ -872,10 +927,16 @@ object HitoriSolver
     }
   }
 
+  /**
+    * Checks if the item is in a corner
+    *
+    * @param board The board to check
+    * @param itemA The item to check
+    * @return a string indicating which corner the item is in
+    */
   def isInCorner(board: HBoard, itemA: HItem): String =
   {
     val bs = math.sqrt(board.items.length) - 1;
-    //0 1 2 3 4
     itemA match
     {
       case i if i.x == 0 && i.y == 0 => "TL" // TopLeft
@@ -886,6 +947,13 @@ object HitoriSolver
     }
   }
 
+  /**
+    * Checks if the item is in a corner plus one
+    *
+    * @param board The board to check
+    * @param itemA The item to check
+    * @return a string indicating which corner plus one the item is in
+    */
   def isInCornerPlusOne(board: HBoard, itemA: HItem): String =
   {
     val bs = math.sqrt(board.items.length) - 1;
@@ -906,7 +974,15 @@ object HitoriSolver
     return i;
   }
 
-  def getCellXY(board: HBoard, xPos: Int, yPos: Int): HItem =
+  /**
+    * Get the item in the given position (x,y)
+    *
+    * @param board The board to check
+    * @param xPos xPos in in the board
+    * @param yPos yPos in the board
+    * @return Returns the item
+    */
+  def getItemXY(board: HBoard, xPos: Int, yPos: Int): HItem =
   {
 
 
@@ -915,6 +991,10 @@ object HitoriSolver
     return board.items.filter(i => i.x == xPos).filter(i => i.y == yPos).head
   }
 
+  /**
+    * Prints the board
+    * @param board The board to print
+    */
   def printBoard(board: HBoard): Unit =
   {
 
@@ -926,7 +1006,7 @@ object HitoriSolver
 
       for (x <- 0 to board.size)
       {
-        val item = getCellXY(b, x, y)
+        val item = getItemXY(b, x, y)
         print(item.state + " ")
       }
 
@@ -936,23 +1016,29 @@ object HitoriSolver
     println("------------------------------------------------")
   }
 
+  /**
+    * Gets all neighbours for a given item in the board.
+    *
+    * @param board The board to chec
+    * @param itemA The item to check for neighbours
+    * @return Returns a list with neighbours(left, right, up, down)
+    */
   def getAllNeighbours(board: HBoard, itemA: HItem): List[HItem] =
   {
-    val left = getCellXY(board, itemA.x - 1, itemA.y)
-    val right = getCellXY(board, itemA.x + 1, itemA.y)
+    val left = getItemXY(board, itemA.x - 1, itemA.y)
+    val right = getItemXY(board, itemA.x + 1, itemA.y)
 
-    val up = getCellXY(board, itemA.x, itemA.y - 1)
-    val down = getCellXY(board, itemA.x, itemA.y + 1)
+    val up = getItemXY(board, itemA.x, itemA.y - 1)
+    val down = getItemXY(board, itemA.x, itemA.y + 1)
 
     return List(left, right, up, down)
   }
 
   /**
     * Checks if the board is solved
-    * Uses the three rules of Hitori and checks if all cells is in a black or white cell
     *
     * @param board The board to check if is consistent and solved
-    * @return True if consistent, false if not
+    * @return True if solved, false if not
     */
   def isSolved(board:HBoard):Boolean =
   {
@@ -962,6 +1048,13 @@ object HitoriSolver
     return true
   }
 
+  /**
+    * Checks if the board is consistent
+    * Uses the three rules of Hitori and checks if all items is in a black or white cell
+    *
+    * @param board The board to check
+    * @return True if consistent, false if not
+    */
   def isConsistent(board:HBoard):Boolean =
   {
     if(!rule1(board)) return false
@@ -971,9 +1064,9 @@ object HitoriSolver
     return true
   }
 
-
   /**
     * Checks if the board is not 1x1 or symmetrical.
+    *
     * @param board Takes in the board to check
     * @return Boolean whether the board is valid or not
     */
@@ -985,9 +1078,9 @@ object HitoriSolver
   }
 
   /**
-    *
-    * @param board
-    * @param outputPath
+    * Saves the solved puzzle to a output file.
+    * @param board The board to save
+    * @param outputPath The output path for the file
     */
   def saveSolvedPuzzle(board: HBoard, outputPath: String): Unit =
   {
@@ -1001,7 +1094,7 @@ object HitoriSolver
 
       for (x <- 0 to board.size)
       {
-        val item = getCellXY(b, x, y)
+        val item = getItemXY(b, x, y)
         outputFile.print(item.state + " ")
       }
 
