@@ -12,14 +12,14 @@ object HitoriSolver
     * @param VALUE The value (number) of the square
     * @param X     The x-position of the square in the board (Relative to the upper left corner)
     * @param Y     The y-position of the square in the board (Relative to the upper left corner)
-    * @param STATE
+    * @param STATE The state of the item. U = Unsolved, W = White, B = Black. Default U.
     */
   class HItem(VALUE: String, X: Int, Y: Int, STATE: String = "U")
   {
-    val value = VALUE;
-    val x = X;
-    val y = Y;
-    val state = STATE;
+    val value: String = VALUE
+    val x: Int = X
+    val y: Int = Y
+    val state: String = STATE
   }
 
   /**
@@ -28,10 +28,10 @@ object HitoriSolver
     *
     * @param CELLS All rows in the board
     */
-  class HBoard(CELLS: List[HItem], VALID: Boolean = true)
+  class HBoard(CELLS: List[HItem])
   {
-    val items = CELLS
-    val size  = (math.sqrt(this.items.length) - 1).toInt
+    val items: List[HItem] = CELLS
+    val size: Int = (math.sqrt(this.items.length) - 1).toInt
   }
 
   /**
@@ -47,12 +47,12 @@ object HitoriSolver
     println("Input path: " + inputPath)
     println("Output path: " + outputPath)
 
-    val board = loadGameFromFile(inputPath);
+    val board = loadGameFromFile(inputPath)
 
     val startTime = System.currentTimeMillis()
 
-    val solvedPuzzle = this.solvePuzzle(board);
-    val endTime = System.currentTimeMillis();
+    val solvedPuzzle = this.solvePuzzle(board)
+    val endTime = System.currentTimeMillis()
 
     printBoard(solvedPuzzle)
 
@@ -72,7 +72,7 @@ object HitoriSolver
     */
   def solvePuzzle(board: HBoard): HBoard =
   {
-    var unsolvedItems = board.items.filter(m => m.state == "U");
+    var unsolvedItems = board.items.filter(m => m.state == "U")
 
     var b = board
 
@@ -89,7 +89,7 @@ object HitoriSolver
       return b
 
     //printBoard(b)
-    unsolvedItems = b.items.filter(m => m.state == "U");
+    unsolvedItems = b.items.filter(m => m.state == "U")
     println("Number of unsolved items after phase 1: " + unsolvedItems.length)
     println("Entering phase 2...")
 
@@ -99,19 +99,17 @@ object HitoriSolver
     if (isSolved(b))
       return b
 
-    unsolvedItems = b.items.filter(m => m.state == "U");
+    unsolvedItems = b.items.filter(m => m.state == "U")
     println("Number of unsolved items after phase 2: " + unsolvedItems.length)
     println("Entering phase 3...")
 
     // Phase 3 search
     b = phase3(b)
 
-    unsolvedItems = b.items.filter(m => m.state == "U");
+    unsolvedItems = b.items.filter(m => m.state == "U")
 
     println("Number of unsolved items: " + unsolvedItems.length)
 
-
-    println("Checking for consistency")
     val consistent = isSolved(b)
 
     if(consistent)
@@ -139,11 +137,11 @@ object HitoriSolver
 
     b = patternOneTimesOne(b)
 
-    val unsolvedItemsBefore = board.items.filter(m => m.state == "U");
+    val unsolvedItemsBefore = board.items.filter(m => m.state == "U")
 
-    b.items.foreach(i => b = phase1Search(b, i));
+    b.items.foreach(i => b = phase1Search(b, i))
 
-    val unsolvedItemsAfter = board.items.filter(m => m.state == "U");
+    val unsolvedItemsAfter = board.items.filter(m => m.state == "U")
 
     if (unsolvedItemsBefore.length == unsolvedItemsAfter.length)
     {
@@ -160,7 +158,7 @@ object HitoriSolver
     * Uses pattern-functions to search for patterns relative to the given item.
     * Finds all duplicates in the board and runs tests.
     *
-    * @param board A hitori board
+    * @param board An hitori board
     * @param item A item to look for patterns
     * @return A partially solved board, or a completly solved board (If easy)
     */
@@ -170,10 +168,10 @@ object HitoriSolver
     var b = board
 
     //printBoard(b)
-    val row = board.items.filter(_.y == item.y);
+    val row = board.items.filter(_.y == item.y)
     val conflictsRow: List[HItem] = row.zipWithIndex.filter(_._1.value == item.value).filter(_._1.state == "U").map(_._1)
 
-    val col = board.items.filter(_.x == item.x);
+    val col = board.items.filter(_.x == item.x)
     val conflictsCol: List[HItem] = col.zipWithIndex.filter(_._1.value == item.value).filter(_._1.state == "U").map(_._1)
 
     val conflicts = conflictsRow ::: conflictsCol
@@ -219,7 +217,7 @@ object HitoriSolver
     * If neighbour duplicates exist, all other duplicates in its corresponding row/col
     * can be painted black
     *
-    * @param board A hitori board
+    * @param board An hitori board
     * @param item The item to check for duplicates and neighbours
     * @return A new hitori board
     */
@@ -257,7 +255,7 @@ object HitoriSolver
   /**
     * Checks if the given items can be related to the double corner pattern
     *
-    * @param board A hitori board
+    * @param board An hitori board
     * @param itemA Main item
     * @param itemB Item to check for relations
     * @return A partially solved hitori board
@@ -291,7 +289,7 @@ object HitoriSolver
 
       case _ => board
     }
-    return f;
+    return f
   }
 
   /**
@@ -306,15 +304,15 @@ object HitoriSolver
   }
 
   /**
-    * This pattern finds triple corners (three similar values) and sets the parent itemas black
-    * It compares a corner itemwith neighbour cells
+    * This pattern finds triple corners (three similar values) and sets the parent item as black
+    * It compares a corner item with neighbour cells
     *   X X O
     *   X O O
     *   O O O
     *
     * @param board The board it checks
     * @param itemA A item to check for the TripleCorner pattern
-    * @return
+    * @return A partially solved hitori board
     */
   def patternTripleCorner(board: HBoard, itemA: HItem): HBoard =
   {
@@ -347,7 +345,7 @@ object HitoriSolver
   }
 
   /**
-    * This pattern finds a flipped triple corner, and sets the innermost itemto black.
+    * This pattern finds a flipped triple corner, and sets the innermost item to black.
     *   O X O
     *   X X O
     *   O O O
@@ -381,7 +379,11 @@ object HitoriSolver
   }
 
   /**
-    * This pattern finds quad corners (four similar values) and sets the parent itemand closest diagonal itemblack.
+    * Finds quad corners (four similar values) and sets the parent item and closest diagonal item black.
+    * @param board An hitori board
+    * @param itemA Main item to check
+    * @param itemB Item to check for relation
+    * @return A partially solved hitori board
     */
   def patternQuadCorner(board: HBoard, itemA: HItem, itemB: HItem): HBoard =
   {
@@ -412,7 +414,7 @@ object HitoriSolver
   /**
     * Checks if the given items is related to the sandwich pattern
     *
-    * @param board A hitori board
+    * @param board An hitori board
     * @param itemA Main item
     * @param itemB Item to check for relations
     * @return A partially solved hitori board
@@ -468,7 +470,7 @@ object HitoriSolver
     * IMPORTANT!
     * Phase 2 will always return a valid board
     *
-    * @param board A hitori board
+    * @param board An hitori board
     * @return A new hitori board with possible valid modifications
     */
   def phase2(board: HBoard): HBoard =
@@ -487,7 +489,7 @@ object HitoriSolver
     * If an item is painted black and an inconsistency occurs, we know it must be white.
     * If an item is paintent black and no inconsistency orrycs, we know nothing abouts its future state
     *
-    * @param board A hitori board
+    * @param board An hitori board
     * @return A new hitori board with possible valid modifications
     */
   def phase2Search(board: HBoard): HBoard =
@@ -501,7 +503,7 @@ object HitoriSolver
     for (i <- dup)
     {
       field = setCellBlack(field, i.x, i.y)
-      field = standardCycle(field, i)
+      field = standardCycle(field)
 
       val noDuplicates = rule1(field)
 
@@ -512,7 +514,7 @@ object HitoriSolver
       {
         field = b
         field = setCellWhite(field, i.x, i.y)
-        field = standardCycle(field, i)
+        field = standardCycle(field)
         return phase2Search(field)
       }
       else
@@ -526,15 +528,14 @@ object HitoriSolver
 
   /**
     *
-    * @param board
-    * @param item
+    * @param board An hitori board
     * @return
     */
-  def standardCycle(board: HBoard, item: HItem): HBoard =
+  def standardCycle(board: HBoard): HBoard =
   {
 
     var b = board
-    // 3
+
     b.items.foreach(i => b = checkIfItemWillBeBlocked(b, i))
 
     return b
@@ -544,16 +545,16 @@ object HitoriSolver
     * Checks if an item is surounded with three black items (or edges)
     * If surrounded, the remaining unknown item must be white.
     *
-    * If surrounded, the unknown itemis set as white
+    * If surrounded, the unknown item is set as white
     *
     * @param board The board containing the item
     * @param itemA The item to check for black items
-    * @return The board, altered if unknown itemis set to white.
+    * @return The board, altered if unknown item is set to white.
     */
   def checkIfItemWillBeBlocked(board: HBoard, itemA: HItem): HBoard =
   {
 
-    if (itemA.state == "B") return board;
+    if (itemA.state == "B") return board
 
     val neighbours = getAllNeighbours(board, itemA)
 
@@ -563,7 +564,7 @@ object HitoriSolver
 
     if (conflicts.length < 3) return board
 
-    val nonConflict = neighbours.filter(i => i != null).filter(i => i.state == "U");
+    val nonConflict = neighbours.filter(i => i != null).filter(i => i.state == "U")
 
     if (nonConflict.isEmpty) return board
 
@@ -674,9 +675,9 @@ object HitoriSolver
     var queue = Queue[HItem]()
     val visited = HashSet[HItem]()
 
-    queue += traversableItems(0)
+    queue += traversableItems.head
 
-    while (!queue.isEmpty)
+    while (queue.nonEmpty)
     {
       val item = queue.dequeue()
 
@@ -720,7 +721,7 @@ object HitoriSolver
     for (i <- dup)
     {
       b = setCellBlack(b, i.x, i.y)
-      b = standardCycle(b, i)
+      b = standardCycle(b)
       b = phase2(b)
       b = phase3(b)
 
@@ -760,12 +761,12 @@ object HitoriSolver
   {
 
     // The white cell
-    val item = getItemXY(board, xPos, yPos);
+    val item = getItemXY(board, xPos, yPos)
 
-    var b = board;
+    var b = board
 
     // All elements in the white items's row
-    val row = b.items.filter(m => m.y == item.y);
+    val row = b.items.filter(m => m.y == item.y)
     val conflictsRow: List[HItem] = row.zipWithIndex.filter(_._1.value == item.value).filter(_._1.state == "U").map(_._1)
 
     for (i <- conflictsRow)
@@ -773,23 +774,23 @@ object HitoriSolver
 
       if (i.x != item.x)
       {
-        b = setCellBlack(b, i.x, i.y);
+        b = setCellBlack(b, i.x, i.y)
       }
     }
 
     // All elements in the white items's col
-    val col = b.items.filter(m => m.x == item.x);
+    val col = b.items.filter(m => m.x == item.x)
     val conflictsCol: List[HItem] = col.zipWithIndex.filter(_._1.value == item.value).filter(_._1.state == "U").map(_._1)
 
     for (i <- conflictsCol.indices)
     {
-      val itemToFix = conflictsCol(i);
+      val itemToFix = conflictsCol(i)
       if (itemToFix.y != item.y)
       {
-        b = setCellBlack(b, itemToFix.x, itemToFix.y);
+        b = setCellBlack(b, itemToFix.x, itemToFix.y)
       }
     }
-    return b;
+    return b
   }
 
   /**
@@ -802,28 +803,28 @@ object HitoriSolver
     */
   def setEdgesWhite(board: HBoard, xPos: Int, yPos: Int): HBoard =
   {
-    val item = getItemXY(board, xPos, yPos);
+    val item = getItemXY(board, xPos, yPos)
 
-    var b = board;
+    var b = board
 
     b.items.foreach(m =>
     {
       m match
       {
-        case i if (i.x == (item.x + 1) && i.y == item.y) => b = setCellWhite(b, i.x, i.y)
-        case i if (i.x == (item.x - 1) && i.y == item.y) => b = setCellWhite(b, i.x, i.y)
-        case i if (i.y == (item.y + 1) && i.x == item.x) => b = setCellWhite(b, i.x, i.y)
-        case i if (i.y == (item.y - 1) && i.x == item.x) => b = setCellWhite(b, i.x, i.y)
+        case i if i.x == (item.x + 1) && i.y == item.y => b = setCellWhite(b, i.x, i.y)
+        case i if i.x == (item.x - 1) && i.y == item.y => b = setCellWhite(b, i.x, i.y)
+        case i if i.y == (item.y + 1) && i.x == item.x => b = setCellWhite(b, i.x, i.y)
+        case i if i.y == (item.y - 1) && i.x == item.x => b = setCellWhite(b, i.x, i.y)
         case _ => b = b
       }
-    });
+    })
 
-    return b;
+    return b
   }
 
   /**
     * Sets an item black.
-    * After setting an itemblack, it also sets the edges of the items white by running setEdgesWhite.
+    * After setting an item black, it also sets the edges of the items white by running setEdgesWhite.
     * See setEdgesWhite.
     *
     * @param board The board to check
@@ -833,17 +834,17 @@ object HitoriSolver
     */
   def setCellBlack(board: HBoard, xPos: Int, yPos: Int): HBoard =
   {
-    val item = getItemXY(board, xPos, yPos);
+    val item = getItemXY(board, xPos, yPos)
 
-    if (item.state != "U") return board;
+    if (item.state != "U") return board
 
-    val b = new HBoard(board.items.map(m => if (m.x == xPos && m.y == yPos) new HItem(item.value, item.x, item.y, "B") else m));
+    val b = new HBoard(board.items.map(m => if (m.x == xPos && m.y == yPos) new HItem(item.value, item.x, item.y, "B") else m))
     return setEdgesWhite(b, xPos, yPos)
   }
 
   /**
     * Sets an item white.
-    * After setting an itemwhite, it runs function setDuplicates black,
+    * After setting an item white, it runs function setDuplicates black,
     * which looks for duplicates in row and col and sets them to black and returns a new board.
     * See setDuplicatesBlack.
     *
@@ -854,13 +855,13 @@ object HitoriSolver
     */
   def setCellWhite(board: HBoard, xPos: Int, yPos: Int): HBoard =
   {
-    val item = getItemXY(board, xPos, yPos);
+    val item = getItemXY(board, xPos, yPos)
 
-    if (item.state != "U") return board;
+    if (item.state != "U") return board
 
-    val b = new HBoard(board.items.map(m => if (m.x == xPos && m.y == yPos) new HItem(item.value, item.x, item.y, "W") else m));
+    val b = new HBoard(board.items.map(m => if (m.x == xPos && m.y == yPos) new HItem(item.value, item.x, item.y, "W") else m))
 
-    return setDuplicatesBlack(b, xPos, yPos);
+    return setDuplicatesBlack(b, xPos, yPos)
   }
 
 
@@ -883,10 +884,10 @@ object HitoriSolver
 
       val item = board.items.filter(i => i.x == index && i.y == index).head
 
-      val row = board.items.filter(_.y == item.y);
+      val row = board.items.filter(_.y == item.y)
       val conflictsRow: List[HItem] = row.zipWithIndex.filter(_._1.value == item.value).map(_._1)
 
-      val col = board.items.filter(_.x == item.x);
+      val col = board.items.filter(_.x == item.x)
       val conflictsCol: List[HItem] = col.zipWithIndex.filter(_._1.value == item.value).map(_._1)
 
       conflictsCol.foreach(i => set += i)
@@ -919,11 +920,11 @@ object HitoriSolver
   {
     itemA match
     {
-      case i if (itemB.x == i.x + 1 && i.y == itemB.y) => "R" // ItemB is right of itemA
-      case i if (itemB.x == i.x - 1 && i.y == itemB.y) => "L" // ItemB is left of itemA
-      case i if (itemB.y == i.y + 1 && i.x == itemB.x) => "T" // ItemB is over itemA (Top)
-      case i if (itemB.y == i.y - 1 && i.x == itemB.x) => "B" // ItemB is under itemA (Bottom)
-      case _ => "F";
+      case i if itemB.x == i.x + 1 && i.y == itemB.y => "R" // ItemB is right of itemA
+      case i if itemB.x == i.x - 1 && i.y == itemB.y => "L" // ItemB is left of itemA
+      case i if itemB.y == i.y + 1 && i.x == itemB.x => "T" // ItemB is over itemA (Top)
+      case i if itemB.y == i.y - 1 && i.x == itemB.x => "B" // ItemB is under itemA (Bottom)
+      case _ => "F"
     }
   }
 
@@ -936,14 +937,14 @@ object HitoriSolver
     */
   def isInCorner(board: HBoard, itemA: HItem): String =
   {
-    val bs = math.sqrt(board.items.length) - 1;
+    val bs = math.sqrt(board.items.length) - 1
     itemA match
     {
       case i if i.x == 0 && i.y == 0 => "TL" // TopLeft
       case i if i.x == bs && i.y == 0 => "TR" // TopRight
       case i if i.x == 0 && i.y == bs => "BL" // BottomLeft
       case i if i.x == bs && i.y == bs => "BR" // BottomRight
-      case _ => "F";
+      case _ => "F"
     }
   }
 
@@ -956,7 +957,7 @@ object HitoriSolver
     */
   def isInCornerPlusOne(board: HBoard, itemA: HItem): String =
   {
-    val bs = math.sqrt(board.items.length) - 1;
+    val bs = math.sqrt(board.items.length) - 1
 
     val i = itemA match
     {
@@ -968,10 +969,10 @@ object HitoriSolver
       case i if i.x - 2 == -1 && i.y == bs + 1 => "BLR" // BottomLeft - right
       case i if i.x == bs && i.y == bs - 1 => "BRT" // BottomRight - top
       case i if i.x == bs - 1 && i.y == bs => "BRL" // BottomRight - left
-      case _ => "F";
+      case _ => "F"
     }
 
-    return i;
+    return i
   }
 
   /**
@@ -998,7 +999,7 @@ object HitoriSolver
   def printBoard(board: HBoard): Unit =
   {
 
-    val b = new HBoard(board.items.sortWith(_.x < _.x).sortWith(_.y < _.y));
+    val b = new HBoard(board.items.sortWith(_.x < _.x).sortWith(_.y < _.y))
 
     println("------------------------------------------------")
     for (y <- 0 to board.size)
@@ -1042,7 +1043,7 @@ object HitoriSolver
     */
   def isSolved(board:HBoard):Boolean =
   {
-    if(board.items.filter(m => m.state == "U").nonEmpty) return false
+    if(board.items.exists(m => m.state == "U")) return false
     if(!isConsistent(board)) return false
 
     return true
@@ -1087,7 +1088,7 @@ object HitoriSolver
     // Solve puzzle and output to file, like so:
 
     val outputFile = new PrintWriter(new File(outputPath), "UTF-8")
-    val b = new HBoard(board.items.sortWith(_.x < _.x).sortWith(_.y < _.y));
+    val b = new HBoard(board.items.sortWith(_.x < _.x).sortWith(_.y < _.y))
 
     for (y <- 0 to board.size)
     {
@@ -1113,15 +1114,15 @@ object HitoriSolver
   def loadGameFromFile(inputPath: String): HBoard =
   {
     val puzzleFile = new File(inputPath)
-    val lines = scala.io.Source.fromFile(puzzleFile).mkString.split("\r\n");
+    val lines = scala.io.Source.fromFile(puzzleFile).mkString.split("\r\n")
 
     var board: HBoard = new HBoard(List())
 
     lines.indices.foreach(y =>
     {
-      val row = lines(y).split(" ");
+      val row = lines(y).split(" ")
       row.indices.foreach(x => board = new HBoard(board.items ::: List(new HItem(row(x), x, y))))
-    });
+    })
 
     // TODO: Remove this for better performance!
     // Prints the board (for testing and debugging)
