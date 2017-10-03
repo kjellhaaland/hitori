@@ -1,0 +1,1292 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+          <title>Hitori Solver Documentation  - HitoriSolver</title>
+          <meta name="description" content="Hitori Solver Documentation - HitoriSolver" />
+          <meta name="keywords" content="Hitori Solver Documentation HitoriSolver" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="lib/index.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="lib/jquery.js"></script>
+      <script type="text/javascript" src="lib/jquery.panzoom.min.js"></script>
+      <script type="text/javascript" src="lib/jquery.mousewheel.min.js"></script>
+      <script type="text/javascript" src="lib/index.js"></script>
+      <script type="text/javascript" src="index.js"></script>
+      <script type="text/javascript" src="lib/scheduler.js"></script>
+      <script type="text/javascript" src="lib/template.js"></script>
+      <script type="text/javascript" src="lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+        /* this variable can be used by the JS to determine the path to the root document */
+        var toRoot = '';
+      </script>
+    
+        </head>
+        <body>
+      <div id="search">
+        <span id="doc-title">Hitori Solver Documentation<span id="doc-version"></span></span>
+        <span class="close-results"><span class="left">&lt;</span> Back</span>
+        <div id="textfilter">
+          <span class="input">
+            <input autocapitalize="none" placeholder="Search" id="index-input" type="text" accesskey="/" />
+            <i class="clear material-icons"></i>
+            <i id="search-icon" class="material-icons"></i>
+          </span>
+        </div>
+    </div>
+      <div id="search-results">
+        <div id="search-progress">
+          <div id="progress-fill"></div>
+        </div>
+        <div id="results-content">
+          <div id="entity-results"></div>
+          <div id="member-results"></div>
+        </div>
+      </div>
+      <div id="content-scroll-container" style="-webkit-overflow-scrolling: touch;">
+        <div id="content-container" style="-webkit-overflow-scrolling: touch;">
+          <div id="subpackage-spacer">
+            <div id="packages">
+              <h1>Packages</h1>
+              <ul>
+                <li name="_root_.root" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="_root_"></a><a id="root:_root_"></a>
+      <span class="permalink">
+      <a href="index.html#_root_" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <a title="" href="index.html">
+              <span class="name">root</span>
+            </a>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="_root_">root</a></dd></dl></div>
+    </li><li name="_root_.HitoriSolver" visbl="pub" class="indented1 current" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="HitoriSolver"></a><a id="HitoriSolver:HitoriSolver"></a>
+      <span class="permalink">
+      <a href="index.html#HitoriSolver" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">HitoriSolver</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="index.html" class="extype" name="_root_">root</a></dd></dl></div>
+    </li>
+              </ul>
+            </div>
+          </div>
+          <div id="content">
+            <body class="object value">
+      <div id="definition">
+        <div class="big-circle object">o</div>
+        
+        <h1>HitoriSolver<span class="permalink">
+      <a href="HitoriSolver$.html" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span></h1>
+        <h3><span class="morelinks"></span></h3>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">HitoriSolver</span>
+      </span>
+      </h4>
+
+      
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
+          <span class="toggle">
+            Linear Supertypes
+          </span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div class="toggle"></div>
+        <div id="memberfilter">
+          <i class="material-icons arrow"></i>
+          <span class="input">
+            <input id="mbrsel-input" placeholder="Filter all members" type="text" accesskey="/" />
+          </span>
+          <i class="clear material-icons"></i>
+        </div>
+        <div id="filterby">
+          <div id="order">
+            <span class="filtertype">Ordering</span>
+            <ol>
+              
+              <li class="alpha in"><span>Alphabetic</span></li>
+              <li class="inherit out"><span>By Inheritance</span></li>
+            </ol>
+          </div>
+          <div class="ancestors">
+                  <span class="filtertype">Inherited<br />
+                  </span>
+                  <ol id="linearization">
+                    <li class="in" name="HitoriSolver"><span>HitoriSolver</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  </ol>
+                </div><div class="ancestors">
+              <span class="filtertype"></span>
+              <ol>
+                <li class="hideall out"><span>Hide All</span></li>
+                <li class="showall in"><span>Show All</span></li>
+              </ol>
+            </div>
+          <div id="visbl">
+              <span class="filtertype">Visibility</span>
+              <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+            </div>
+        </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="HitoriSolver.HBoard" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="HBoardextendsAnyRef"></a><a id="HBoard:HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#HBoardextendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a title="Represents a hitori board
+Consists of a single list of HItems (Squares)
+" href="HitoriSolver$$HBoard.html">
+              <span class="name">HBoard</span>
+            </a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Represents a hitori board
+Consists of a single list of HItems (Squares)
+</p>
+    </li><li name="HitoriSolver.HItem" visbl="pub" class="indented0 " data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="HItemextendsAnyRef"></a><a id="HItem:HItem"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#HItemextendsAnyRef" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">class</span>
+      </span>
+      <span class="symbol">
+        <a title="Represents a square or element in a hitori board
+" href="HitoriSolver$$HItem.html">
+              <span class="name">HItem</span>
+            </a><span class="result"> extends <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Represents a square or element in a hitori board
+</p>
+    </li></ol>
+            </div>
+
+        
+
+        <div class="values members">
+              <h3>Value Members</h3>
+              <ol>
+                <li name="scala.AnyRef#!=" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a><a id="!=(Any):Boolean"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#!=(x$1:Any):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html###():Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a><a id="==(Any):Boolean"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#==(x$1:Any):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#asInstanceOf[T0]:T0" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="HitoriSolver#checkForUniqueness" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="checkForUniqueness(board:HitoriSolver.HBoard,item:HitoriSolver.HItem):HitoriSolver.HBoard"></a><a id="checkForUniqueness(HBoard,HItem):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#checkForUniqueness(board:HitoriSolver.HBoard,item:HitoriSolver.HItem):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">checkForUniqueness</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="item">item: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Checks if there exist any duplicates of the given item in its row or column
+If there are no errors, the item is set to white.</p><div class="fullcomment"><div class="comment cmt"><p>Checks if there exist any duplicates of the given item in its row or column
+If there are no errors, the item is set to white.</p><p>Ignores blacked items
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board to scan</p></dd><dt class="param">item</dt><dd class="cmt"><p>The item to compare to</p></dd><dt>returns</dt><dd class="cmt"><p>A new board with changes only if the item was unique in its row/col</p></dd></dl></div>
+    </li><li name="HitoriSolver#checkIfItemWillBeBlocked" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="checkIfItemWillBeBlocked(board:HitoriSolver.HBoard,itemA:HitoriSolver.HItem):HitoriSolver.HBoard"></a><a id="checkIfItemWillBeBlocked(HBoard,HItem):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#checkIfItemWillBeBlocked(board:HitoriSolver.HBoard,itemA:HitoriSolver.HItem):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">checkIfItemWillBeBlocked</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="itemA">itemA: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Checks if an item is surounded with three black items (or edges)
+If surrounded, the remaining unknown item must be white.</p><div class="fullcomment"><div class="comment cmt"><p>Checks if an item is surounded with three black items (or edges)
+If surrounded, the remaining unknown item must be white.</p><p>If surrounded, the unknown item is set as white
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board containing the item</p></dd><dt class="param">itemA</dt><dd class="cmt"><p>The item to check for black items</p></dd><dt>returns</dt><dd class="cmt"><p>The board, altered if unknown item is set to white.</p></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a><a id="clone():AnyRef"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#clone():Object" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="HitoriSolver#duplicates" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="duplicates(board:HitoriSolver.HBoard):List[HitoriSolver.HItem]"></a><a id="duplicates(HBoard):List[HItem]"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#duplicates(board:HitoriSolver.HBoard):List[HitoriSolver.HItem]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">duplicates</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>)</span><span class="result">: <span class="extype" name="scala.List">List</span>[<a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Find all duplicates in the board (row and col)
+</p><div class="fullcomment"><div class="comment cmt"><p>Find all duplicates in the board (row and col)
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board to check</p></dd><dt>returns</dt><dd class="cmt"><p>A list with duplicates</p></dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a><a id="eq(AnyRef):Boolean"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#eq(x$1:AnyRef):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a><a id="equals(Any):Boolean"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#equals(x$1:Any):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#finalize():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="java/lang/index.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="HitoriSolver#getAllNeighbours" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getAllNeighbours(board:HitoriSolver.HBoard,itemA:HitoriSolver.HItem):List[HitoriSolver.HItem]"></a><a id="getAllNeighbours(HBoard,HItem):List[HItem]"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#getAllNeighbours(board:HitoriSolver.HBoard,itemA:HitoriSolver.HItem):List[HitoriSolver.HItem]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getAllNeighbours</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="itemA">itemA: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>)</span><span class="result">: <span class="extype" name="scala.List">List</span>[<a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Gets all neighbours for a given item in the board.</p><div class="fullcomment"><div class="comment cmt"><p>Gets all neighbours for a given item in the board.
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board to chec</p></dd><dt class="param">itemA</dt><dd class="cmt"><p>The item to check for neighbours</p></dd><dt>returns</dt><dd class="cmt"><p>Returns a list with neighbours(left, right, up, down)</p></dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#getClass():Class[_]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="HitoriSolver#getItemXY" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getItemXY(board:HitoriSolver.HBoard,xPos:Int,yPos:Int):HitoriSolver.HItem"></a><a id="getItemXY(HBoard,Int,Int):HItem"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#getItemXY(board:HitoriSolver.HBoard,xPos:Int,yPos:Int):HitoriSolver.HItem" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getItemXY</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="xPos">xPos: <span class="extype" name="scala.Int">Int</span></span>, <span name="yPos">yPos: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Get the item in the given position (x,y)
+</p><div class="fullcomment"><div class="comment cmt"><p>Get the item in the given position (x,y)
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board to check</p></dd><dt class="param">xPos</dt><dd class="cmt"><p>xPos in in the board</p></dd><dt class="param">yPos</dt><dd class="cmt"><p>yPos in the board</p></dd><dt>returns</dt><dd class="cmt"><p>Returns the item</p></dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#hashCode():Int" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="HitoriSolver#isBoardValid" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isBoardValid(board:HitoriSolver.HBoard):Boolean"></a><a id="isBoardValid(HBoard):Boolean"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#isBoardValid(board:HitoriSolver.HBoard):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isBoardValid</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Checks if the board is not 1x1 or symmetrical.</p><div class="fullcomment"><div class="comment cmt"><p>Checks if the board is not 1x1 or symmetrical.
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>Takes in the board to check</p></dd><dt>returns</dt><dd class="cmt"><p>Boolean whether the board is valid or not</p></dd></dl></div>
+    </li><li name="HitoriSolver#isConsistent" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isConsistent(board:HitoriSolver.HBoard):Boolean"></a><a id="isConsistent(HBoard):Boolean"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#isConsistent(board:HitoriSolver.HBoard):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isConsistent</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Checks if the board is consistent
+Uses the three rules of Hitori and checks if all items is in a black or white cell
+</p><div class="fullcomment"><div class="comment cmt"><p>Checks if the board is consistent
+Uses the three rules of Hitori and checks if all items is in a black or white cell
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board to check</p></dd><dt>returns</dt><dd class="cmt"><p>True if consistent, false if not</p></dd></dl></div>
+    </li><li name="HitoriSolver#isInCorner" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInCorner(board:HitoriSolver.HBoard,itemA:HitoriSolver.HItem):String"></a><a id="isInCorner(HBoard,HItem):String"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#isInCorner(board:HitoriSolver.HBoard,itemA:HitoriSolver.HItem):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInCorner</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="itemA">itemA: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Checks if the item is in a corner
+</p><div class="fullcomment"><div class="comment cmt"><p>Checks if the item is in a corner
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board to check</p></dd><dt class="param">itemA</dt><dd class="cmt"><p>The item to check</p></dd><dt>returns</dt><dd class="cmt"><p>a string indicating which corner the item is in</p></dd></dl></div>
+    </li><li name="HitoriSolver#isInCornerPlusOne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInCornerPlusOne(board:HitoriSolver.HBoard,itemA:HitoriSolver.HItem):String"></a><a id="isInCornerPlusOne(HBoard,HItem):String"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#isInCornerPlusOne(board:HitoriSolver.HBoard,itemA:HitoriSolver.HItem):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInCornerPlusOne</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="itemA">itemA: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Checks if the item is in a corner plus one
+</p><div class="fullcomment"><div class="comment cmt"><p>Checks if the item is in a corner plus one
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board to check</p></dd><dt class="param">itemA</dt><dd class="cmt"><p>The item to check</p></dd><dt>returns</dt><dd class="cmt"><p>a string indicating which corner plus one the item is in</p></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#isInstanceOf[T0]:Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="HitoriSolver#isNextToDuplicate" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isNextToDuplicate(itemA:HitoriSolver.HItem,itemB:HitoriSolver.HItem):String"></a><a id="isNextToDuplicate(HItem,HItem):String"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#isNextToDuplicate(itemA:HitoriSolver.HItem,itemB:HitoriSolver.HItem):String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isNextToDuplicate</span><span class="params">(<span name="itemA">itemA: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>, <span name="itemB">itemB: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>)</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Checks if the item is next to a duplicate
+</p><div class="fullcomment"><div class="comment cmt"><p>Checks if the item is next to a duplicate
+</p></div><dl class="paramcmts block"><dt class="param">itemA</dt><dd class="cmt"><p>An item to check if it is next to duplicate</p></dd><dt class="param">itemB</dt><dd class="cmt"><p>An item from a duplicate list to check with itemA</p></dd><dt>returns</dt><dd class="cmt"><p>returns a string indicating where the duplicate is relative to itemA</p></dd></dl></div>
+    </li><li name="HitoriSolver#isSolved" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isSolved(board:HitoriSolver.HBoard):Boolean"></a><a id="isSolved(HBoard):Boolean"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#isSolved(board:HitoriSolver.HBoard):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isSolved</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Checks if the board is solved
+</p><div class="fullcomment"><div class="comment cmt"><p>Checks if the board is solved
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board to check if is consistent and solved</p></dd><dt>returns</dt><dd class="cmt"><p>True if solved, false if not</p></dd></dl></div>
+    </li><li name="HitoriSolver#loadGameFromFile" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="loadGameFromFile(inputPath:String):HitoriSolver.HBoard"></a><a id="loadGameFromFile(String):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#loadGameFromFile(inputPath:String):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">loadGameFromFile</span><span class="params">(<span name="inputPath">inputPath: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Load the file from the specified path
+</p><div class="fullcomment"><div class="comment cmt"><p>Load the file from the specified path
+</p></div><dl class="paramcmts block"><dt class="param">inputPath</dt><dd class="cmt"><p>The filepath of the board (Relative to the src folder)</p></dd><dt>returns</dt><dd class="cmt"><p>The hitori-board parsed from the given file.</p></dd></dl></div>
+    </li><li name="HitoriSolver#main" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="main(args:Array[String]):Unit"></a><a id="main(Array[String]):Unit"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#main(args:Array[String]):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">main</span><span class="params">(<span name="args">args: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">args</dt><dd class="cmt"><p>input and output path</p></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a><a id="ne(AnyRef):Boolean"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#ne(x$1:AnyRef):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#notify():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#notifyAll():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="HitoriSolver#patternDoubleCorner" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="patternDoubleCorner(board:HitoriSolver.HBoard,itemA:HitoriSolver.HItem,itemB:HitoriSolver.HItem):HitoriSolver.HBoard"></a><a id="patternDoubleCorner(HBoard,HItem,HItem):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#patternDoubleCorner(board:HitoriSolver.HBoard,itemA:HitoriSolver.HItem,itemB:HitoriSolver.HItem):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">patternDoubleCorner</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="itemA">itemA: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>, <span name="itemB">itemB: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Checks if the given items can be related to the double corner pattern
+</p><div class="fullcomment"><div class="comment cmt"><p>Checks if the given items can be related to the double corner pattern
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>An hitori board</p></dd><dt class="param">itemA</dt><dd class="cmt"><p>Main item</p></dd><dt class="param">itemB</dt><dd class="cmt"><p>Item to check for relations</p></dd><dt>returns</dt><dd class="cmt"><p>A partially solved hitori board</p></dd></dl></div>
+    </li><li name="HitoriSolver#patternFlippedTripleCorner" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="patternFlippedTripleCorner(board:HitoriSolver.HBoard,itemA:HitoriSolver.HItem):HitoriSolver.HBoard"></a><a id="patternFlippedTripleCorner(HBoard,HItem):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#patternFlippedTripleCorner(board:HitoriSolver.HBoard,itemA:HitoriSolver.HItem):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">patternFlippedTripleCorner</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="itemA">itemA: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">This pattern finds a flipped triple corner, and sets the innermost item to black.</p><div class="fullcomment"><div class="comment cmt"><p>This pattern finds a flipped triple corner, and sets the innermost item to black.
+  O X O
+  X X O
+  O O O
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board it checks</p></dd><dt class="param">itemA</dt><dd class="cmt"><p>A item to check for the flipper TripleCorner pattern</p></dd></dl></div>
+    </li><li name="HitoriSolver#patternOneTimesOne" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="patternOneTimesOne(board:HitoriSolver.HBoard):HitoriSolver.HBoard"></a><a id="patternOneTimesOne(HBoard):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#patternOneTimesOne(board:HitoriSolver.HBoard):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">patternOneTimesOne</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">This pattern checks if the board is 1x1.</p><div class="fullcomment"><div class="comment cmt"><p>This pattern checks if the board is 1x1.</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board it checks</p></dd><dt>returns</dt><dd class="cmt"><p>a solved board with white cell.</p></dd></dl></div>
+    </li><li name="HitoriSolver#patternPairIsolation" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="patternPairIsolation(board:HitoriSolver.HBoard,item:HitoriSolver.HItem):HitoriSolver.HBoard"></a><a id="patternPairIsolation(HBoard,HItem):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#patternPairIsolation(board:HitoriSolver.HBoard,item:HitoriSolver.HItem):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">patternPairIsolation</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="item">item: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Patterns that checks if there are any neigbour duplicates to the given item
+If neighbour duplicates exist, all other duplicates in its corresponding row/col
+can be painted black
+</p><div class="fullcomment"><div class="comment cmt"><p>Patterns that checks if there are any neigbour duplicates to the given item
+If neighbour duplicates exist, all other duplicates in its corresponding row/col
+can be painted black
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>An hitori board</p></dd><dt class="param">item</dt><dd class="cmt"><p>The item to check for duplicates and neighbours</p></dd><dt>returns</dt><dd class="cmt"><p>A new hitori board</p></dd></dl></div>
+    </li><li name="HitoriSolver#patternQuadCorner" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="patternQuadCorner(board:HitoriSolver.HBoard,itemA:HitoriSolver.HItem,itemB:HitoriSolver.HItem):HitoriSolver.HBoard"></a><a id="patternQuadCorner(HBoard,HItem,HItem):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#patternQuadCorner(board:HitoriSolver.HBoard,itemA:HitoriSolver.HItem,itemB:HitoriSolver.HItem):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">patternQuadCorner</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="itemA">itemA: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>, <span name="itemB">itemB: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Finds quad corners (four similar values) and sets the parent item and closest diagonal item black.</p><div class="fullcomment"><div class="comment cmt"><p>Finds quad corners (four similar values) and sets the parent item and closest diagonal item black.</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>An hitori board</p></dd><dt class="param">itemA</dt><dd class="cmt"><p>Main item to check</p></dd><dt class="param">itemB</dt><dd class="cmt"><p>Item to check for relation</p></dd><dt>returns</dt><dd class="cmt"><p>A partially solved hitori board</p></dd></dl></div>
+    </li><li name="HitoriSolver#patternSandwich" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="patternSandwich(board:HitoriSolver.HBoard,itemA:HitoriSolver.HItem,itemB:HitoriSolver.HItem):HitoriSolver.HBoard"></a><a id="patternSandwich(HBoard,HItem,HItem):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#patternSandwich(board:HitoriSolver.HBoard,itemA:HitoriSolver.HItem,itemB:HitoriSolver.HItem):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">patternSandwich</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="itemA">itemA: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>, <span name="itemB">itemB: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Checks if the given items is related to the sandwich pattern
+</p><div class="fullcomment"><div class="comment cmt"><p>Checks if the given items is related to the sandwich pattern
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>An hitori board</p></dd><dt class="param">itemA</dt><dd class="cmt"><p>Main item</p></dd><dt class="param">itemB</dt><dd class="cmt"><p>Item to check for relations</p></dd><dt>returns</dt><dd class="cmt"><p>A partially solved hitori board</p></dd></dl></div>
+    </li><li name="HitoriSolver#patternTriple" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="patternTriple(board:HitoriSolver.HBoard,item:HitoriSolver.HItem):HitoriSolver.HBoard"></a><a id="patternTriple(HBoard,HItem):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#patternTriple(board:HitoriSolver.HBoard,item:HitoriSolver.HItem):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">patternTriple</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="item">item: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Pattern that determines it an item can be solved using the triple rule
+If three items in a row or column have the same value, the item in the middle must be white
+</p><div class="fullcomment"><div class="comment cmt"><p>Pattern that determines it an item can be solved using the triple rule
+If three items in a row or column have the same value, the item in the middle must be white
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>A Hitori board</p></dd><dt class="param">item</dt><dd class="cmt"><p>A item to check for the triple rule</p></dd><dt>returns</dt><dd class="cmt"><p>A new hitori board with possible changes</p></dd></dl></div>
+    </li><li name="HitoriSolver#patternTripleCorner" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="patternTripleCorner(board:HitoriSolver.HBoard,itemA:HitoriSolver.HItem):HitoriSolver.HBoard"></a><a id="patternTripleCorner(HBoard,HItem):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#patternTripleCorner(board:HitoriSolver.HBoard,itemA:HitoriSolver.HItem):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">patternTripleCorner</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="itemA">itemA: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">This pattern finds triple corners (three similar values) and sets the parent item as black
+It compares a corner item with neighbour cells
+  X X O
+  X O O
+  O O O
+</p><div class="fullcomment"><div class="comment cmt"><p>This pattern finds triple corners (three similar values) and sets the parent item as black
+It compares a corner item with neighbour cells
+  X X O
+  X O O
+  O O O
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board it checks</p></dd><dt class="param">itemA</dt><dd class="cmt"><p>A item to check for the TripleCorner pattern</p></dd><dt>returns</dt><dd class="cmt"><p>A partially solved hitori board</p></dd></dl></div>
+    </li><li name="HitoriSolver#phase1" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="phase1(board:HitoriSolver.HBoard):HitoriSolver.HBoard"></a><a id="phase1(HBoard):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#phase1(board:HitoriSolver.HBoard):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">phase1</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Performs phase 1 search until no changes in the board occures between two iterations
+</p><div class="fullcomment"><div class="comment cmt"><p>Performs phase 1 search until no changes in the board occures between two iterations
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board to search for patterns</p></dd><dt>returns</dt><dd class="cmt"><p>A partially solved board, or a completly solved board (If easy)</p></dd></dl></div>
+    </li><li name="HitoriSolver#phase1Search" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="phase1Search(board:HitoriSolver.HBoard,item:HitoriSolver.HItem):HitoriSolver.HBoard"></a><a id="phase1Search(HBoard,HItem):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#phase1Search(board:HitoriSolver.HBoard,item:HitoriSolver.HItem):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">phase1Search</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="item">item: <a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Uses pattern-functions to search for patterns relative to the given item.</p><div class="fullcomment"><div class="comment cmt"><p>Uses pattern-functions to search for patterns relative to the given item.
+Finds all duplicates in the board and runs tests.
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>An hitori board</p></dd><dt class="param">item</dt><dd class="cmt"><p>A item to look for patterns</p></dd><dt>returns</dt><dd class="cmt"><p>A partially solved board, or a completly solved board (If easy)</p></dd></dl></div>
+    </li><li name="HitoriSolver#phase2" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="phase2(board:HitoriSolver.HBoard):HitoriSolver.HBoard"></a><a id="phase2(HBoard):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#phase2(board:HitoriSolver.HBoard):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">phase2</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Performes phase 2 search
+After phase2 is completed, it checks if any of the unsolved items are unique in their row.</p><div class="fullcomment"><div class="comment cmt"><p>Performes phase 2 search
+After phase2 is completed, it checks if any of the unsolved items are unique in their row.
+Also checks if any of the changes violates the third rule.</p><p>IMPORTANT!
+Phase 2 will always return a valid board
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>An hitori board</p></dd><dt>returns</dt><dd class="cmt"><p>A new hitori board with possible valid modifications</p></dd></dl></div>
+    </li><li name="HitoriSolver#phase2Search" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="phase2Search(board:HitoriSolver.HBoard):HitoriSolver.HBoard"></a><a id="phase2Search(HBoard):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#phase2Search(board:HitoriSolver.HBoard):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">phase2Search</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Phase 2 search takes all of the items that has duplicates and has the state 'U' and tries to paint them black
+If an item is painted black and an inconsistency occurs, we know it must be white.</p><div class="fullcomment"><div class="comment cmt"><p>Phase 2 search takes all of the items that has duplicates and has the state 'U' and tries to paint them black
+If an item is painted black and an inconsistency occurs, we know it must be white.
+If an item is paintent black and no inconsistency orrycs, we know nothing abouts its future state
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>An hitori board</p></dd><dt>returns</dt><dd class="cmt"><p>A new hitori board with possible valid modifications</p></dd></dl></div>
+    </li><li name="HitoriSolver#phase3" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="phase3(board:HitoriSolver.HBoard):HitoriSolver.HBoard"></a><a id="phase3(HBoard):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#phase3(board:HitoriSolver.HBoard):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">phase3</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Phase 3
+MARK: With big boards, phase 3 takes time!</p><div class="fullcomment"><div class="comment cmt"><p>Phase 3
+MARK: With big boards, phase 3 takes time!</p><p>Uses recursion to try and fail with different possible solutions.
+Makes use of the standardCycle and phase2 for chain-reactions and checking
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>A partially solved board</p></dd><dt>returns</dt><dd class="cmt"><p>A solved board.</p></dd></dl></div>
+    </li><li name="HitoriSolver#printBoard" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="printBoard(board:HitoriSolver.HBoard):Unit"></a><a id="printBoard(HBoard):Unit"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#printBoard(board:HitoriSolver.HBoard):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">printBoard</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Prints the board</p><div class="fullcomment"><div class="comment cmt"><p>Prints the board</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board to print</p></dd></dl></div>
+    </li><li name="HitoriSolver#rule1" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="rule1(board:HitoriSolver.HBoard):Boolean"></a><a id="rule1(HBoard):Boolean"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#rule1(board:HitoriSolver.HBoard):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rule1</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Hitori rule 1
+&quot; Numbers must not appear more than once in each row and each column.&quot;</p><div class="fullcomment"><div class="comment cmt"><p>Hitori rule 1
+&quot; Numbers must not appear more than once in each row and each column.&quot;</p><p>Checks if there exist any duplicates where the item's state is set to 'W'.
+If there are any duplicates, the board will be in a inconistent state
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board to check for duplicates in</p></dd><dt>returns</dt><dd class="cmt"><p>True if no duplicates, false if there are</p></dd></dl></div>
+    </li><li name="HitoriSolver#rule2" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="rule2(board:HitoriSolver.HBoard):Boolean"></a><a id="rule2(HBoard):Boolean"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#rule2(board:HitoriSolver.HBoard):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rule2</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Hitori rule 2
+&quot;Black items are never adjacent in a row or column.&quot;</p><div class="fullcomment"><div class="comment cmt"><p>Hitori rule 2
+&quot;Black items are never adjacent in a row or column.&quot;</p><p>Checks if there are two black items adjacent to each other
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board to check for inconistensies</p></dd><dt>returns</dt><dd class="cmt"><p>True if no errors, false if errors</p></dd></dl></div>
+    </li><li name="HitoriSolver#rule3" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="rule3(board:HitoriSolver.HBoard):Boolean"></a><a id="rule3(HBoard):Boolean"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#rule3(board:HitoriSolver.HBoard):Boolean" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rule3</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Hitori rule 3
+&quot;Unpainted items create a single continous area, undivided by painted items&quot;</p><div class="fullcomment"><div class="comment cmt"><p>Hitori rule 3
+&quot;Unpainted items create a single continous area, undivided by painted items&quot;</p><p>Checks if all items are connected.
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board to check for inconistensies</p></dd><dt>returns</dt><dd class="cmt"><p>True if no errors, false if errors</p></dd></dl></div>
+    </li><li name="HitoriSolver#saveSolvedPuzzle" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="saveSolvedPuzzle(board:HitoriSolver.HBoard,outputPath:String):Unit"></a><a id="saveSolvedPuzzle(HBoard,String):Unit"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#saveSolvedPuzzle(board:HitoriSolver.HBoard,outputPath:String):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">saveSolvedPuzzle</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="outputPath">outputPath: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <p class="shortcomment cmt">Saves the solved puzzle to a output file.</p><div class="fullcomment"><div class="comment cmt"><p>Saves the solved puzzle to a output file.</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board to save</p></dd><dt class="param">outputPath</dt><dd class="cmt"><p>The output path for the file</p></dd></dl></div>
+    </li><li name="HitoriSolver#setCellBlack" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setCellBlack(board:HitoriSolver.HBoard,xPos:Int,yPos:Int):HitoriSolver.HBoard"></a><a id="setCellBlack(HBoard,Int,Int):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#setCellBlack(board:HitoriSolver.HBoard,xPos:Int,yPos:Int):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setCellBlack</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="xPos">xPos: <span class="extype" name="scala.Int">Int</span></span>, <span name="yPos">yPos: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Sets an item black.</p><div class="fullcomment"><div class="comment cmt"><p>Sets an item black.
+After setting an item black, it also sets the edges of the items white by running setEdgesWhite.
+See setEdgesWhite.
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board to check</p></dd><dt class="param">xPos</dt><dd class="cmt"><p>xPos of the item in the board</p></dd><dt class="param">yPos</dt><dd class="cmt"><p>yPos of the item in the board</p></dd><dt>returns</dt><dd class="cmt"><p>A new board</p></dd></dl></div>
+    </li><li name="HitoriSolver#setCellWhite" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setCellWhite(board:HitoriSolver.HBoard,xPos:Int,yPos:Int):HitoriSolver.HBoard"></a><a id="setCellWhite(HBoard,Int,Int):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#setCellWhite(board:HitoriSolver.HBoard,xPos:Int,yPos:Int):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setCellWhite</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="xPos">xPos: <span class="extype" name="scala.Int">Int</span></span>, <span name="yPos">yPos: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Sets an item white.</p><div class="fullcomment"><div class="comment cmt"><p>Sets an item white.
+After setting an item white, it runs function setDuplicates black,
+which looks for duplicates in row and col and sets them to black and returns a new board.
+See setDuplicatesBlack.
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>Board to check</p></dd><dt class="param">xPos</dt><dd class="cmt"><p>xPos of the item in the board</p></dd><dt class="param">yPos</dt><dd class="cmt"><p>yPos of the item in the board</p></dd><dt>returns</dt><dd class="cmt"><p>A new board</p></dd></dl></div>
+    </li><li name="HitoriSolver#setDuplicatesBlack" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setDuplicatesBlack(board:HitoriSolver.HBoard,xPos:Int,yPos:Int):HitoriSolver.HBoard"></a><a id="setDuplicatesBlack(HBoard,Int,Int):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#setDuplicatesBlack(board:HitoriSolver.HBoard,xPos:Int,yPos:Int):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setDuplicatesBlack</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="xPos">xPos: <span class="extype" name="scala.Int">Int</span></span>, <span name="yPos">yPos: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Sets duplicates in row/col of a white item to black
+</p><div class="fullcomment"><div class="comment cmt"><p>Sets duplicates in row/col of a white item to black
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board to check</p></dd><dt class="param">xPos</dt><dd class="cmt"><p>xPos of the item in the board</p></dd><dt class="param">yPos</dt><dd class="cmt"><p>yPos of the item in the board</p></dd><dt>returns</dt><dd class="cmt"><p>A new board</p></dd></dl></div>
+    </li><li name="HitoriSolver#setEdgesWhite" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="setEdgesWhite(board:HitoriSolver.HBoard,xPos:Int,yPos:Int):HitoriSolver.HBoard"></a><a id="setEdgesWhite(HBoard,Int,Int):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#setEdgesWhite(board:HitoriSolver.HBoard,xPos:Int,yPos:Int):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">setEdgesWhite</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>, <span name="xPos">xPos: <span class="extype" name="scala.Int">Int</span></span>, <span name="yPos">yPos: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Sets the edges of an given item white.</p><div class="fullcomment"><div class="comment cmt"><p>Sets the edges of an given item white. (left, right, top, bottom)
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The board to check</p></dd><dt class="param">xPos</dt><dd class="cmt"><p>xPos of the item in the board</p></dd><dt class="param">yPos</dt><dd class="cmt"><p>yPos of the item in the board</p></dd><dt>returns</dt><dd class="cmt"><p>A new board</p></dd></dl></div>
+    </li><li name="HitoriSolver#solvePuzzle" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="solvePuzzle(board:HitoriSolver.HBoard):HitoriSolver.HBoard"></a><a id="solvePuzzle(HBoard):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#solvePuzzle(board:HitoriSolver.HBoard):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">solvePuzzle</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt">Main function of control
+</p><div class="fullcomment"><div class="comment cmt"><p>Main function of control
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>The Hitori board to solve</p></dd><dt>returns</dt><dd class="cmt"><p>Either a solved board (No unsolved items) or a non-consistent board (All unsolved items)</p></dd></dl></div>
+    </li><li name="HitoriSolver#standardCycle" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="standardCycle(board:HitoriSolver.HBoard):HitoriSolver.HBoard"></a><a id="standardCycle(HBoard):HBoard"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#standardCycle(board:HitoriSolver.HBoard):HitoriSolver.HBoard" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">standardCycle</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>)</span><span class="result">: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>
+      </span>
+      
+      <p class="shortcomment cmt"></p><div class="fullcomment"><div class="comment cmt"></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>An hitori board</p></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a><a id="synchronized[T0](⇒T0):T0"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#synchronized[T0](x$1:=&gt;T0):T0" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#toString():String" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="HitoriSolver#unsolvedDuplicates" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="unsolvedDuplicates(board:HitoriSolver.HBoard):List[HitoriSolver.HItem]"></a><a id="unsolvedDuplicates(HBoard):List[HItem]"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#unsolvedDuplicates(board:HitoriSolver.HBoard):List[HitoriSolver.HItem]" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">unsolvedDuplicates</span><span class="params">(<span name="board">board: <a href="HitoriSolver$$HBoard.html" class="extype" name="HitoriSolver.HBoard">HBoard</a></span>)</span><span class="result">: <span class="extype" name="scala.List">List</span>[<a href="HitoriSolver$$HItem.html" class="extype" name="HitoriSolver.HItem">HItem</a>]</span>
+      </span>
+      
+      <p class="shortcomment cmt">Returns a list with unsolved duplicates
+</p><div class="fullcomment"><div class="comment cmt"><p>Returns a list with unsolved duplicates
+</p></div><dl class="paramcmts block"><dt class="param">board</dt><dd class="cmt"><p>the board to check</p></dd><dt>returns</dt><dd class="cmt"><p>a list with unsolved duplicates</p></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#wait():Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a><a id="wait(Long,Int):Unit"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#wait(x$1:Long,x$2:Int):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" class="indented0 " data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a><a id="wait(Long):Unit"></a>
+      <span class="permalink">
+      <a href="HitoriSolver$.html#wait(x$1:Long):Unit" title="Permalink">
+        <i class="material-icons"></i>
+      </a>
+    </span>
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li>
+              </ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+    </body>
+          </div>
+        </div>
+      </div>
+    </body>
+      </html>
